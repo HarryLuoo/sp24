@@ -1,7 +1,7 @@
 #set heading(numbering: "1.1)")
 #set page(margin: (x: 1cm, y: 1cm),numbering: "1/1")
 #set math.equation(numbering:"(1)")
-
+#show math.equation: set text(12pt)
 #text(font: "Cambria",size: 14pt,weight: "black")[Brief Mechanics\
 Survey of main ideas and equations up till Exam 1]\
 work in progress...
@@ -137,3 +137,44 @@ solving this ODE by integration gives $
 @4.equ.phi and @4.equ.t describe the relative motion of the two body system in terms of constants ${E,L_z,C,C'}$
 
 == Shape of orbit
+- @4.equ.t skipped a step, $
+(dif r)/(dif t) = sqrt((2/mu)[E - U(r)- (L_z^2)/(2 mu r ^2)])
+$
+this equation, combined with our beloved $ L_z = mu r ^2 dot(phi) => dif phi = (L_z)/(mu r ^2) dif t $ we get the equation of orbit: $
+dif phi = (L_z)/sqrt(2mu) (dif r)/(r^2 sqrt(E - U(r) - L_z^2/(2mu r^2))) \ 
+=> phi = (L_z)/(sqrt(2mu)) integral (dif r)/(r^2 sqrt(E - U(r) - L_z^2/(2mu r^2))) + C
+$
+
+== Effective potential and shape of orbit (Only for Attractive Potential)
+$ U_"eff"=U(r)+ L_z^2/(2mu r^2)\ 
+E = 1/2 mu dot(r)^2 + U_"eff"(r)  $
+- When $r->infinity$, $U_"eff"->U(r)$, and when $r->0$, $U_"eff"->"centrifutal potential" L_z^2/(2mu r^2)$.\
+   
+- by graphing the effective potential, and given constraint of total energy E, we can analyze the shape of the orbit:
+#image("orbit.png", width: 80%) \
+- when $E>0$, the orbit is unbounded, open orbit, hyperbola.\
+- when $E < 0$, the orbit is bounded into a potential well, although not neccessarily closed.
+- when $E=E_min$, the orbit is circular, $F = -mu (v^2)/(r)$
+
+= The Kepler Problem: a special case of the two body problem
+== conditions
+$ U(r) = -alpha/r\ U_"eff"= -alpha/r + L_z^2/(2mu r^2) $
+== Conic section orbits
+We can proof that the orbit is a conic section given by $
+#rect()[$ r(phi) = p/(1+e cos(phi)) $]
+ \ "where" cases(p = L_z^2/(mu alpha) , e = sqrt(1+(2E L_z^2)/(mu alpha^2)))
+$
+
+== Classifications of orbits based on energy of system E 
+- When $E>0, e>1$, the orbit is unbounded, open orbit, hyperbola. $
+(x-c)^2/a^2-y^2/b^2
+= 1\ cases( a= p/(e^2 - 1),b = p/sqrt(e^2 - 1),c = a e, r_"min"=p/(1+e))
+$
+- when $E=0, e=1$, the orbit is parabola.$
+  y^2 = p^2 - 2 x p, \ r_"min" = p/2
+  $
+- when $E < 0, e<1$, the orbit is closed, ellipse.$
+(x+c)^2/a^2+y^2/b^2 = 1,\ cases( a= p/(1-e^2),b = p/sqrt(1-e^2),c = a e, r_"min"=p/(1+e), r_"max" = p/(1-e))
+$
+- When $E = E_"min", display(f = (mu alpha^2)/(2 L_z^2)), e=0$,  orbit is circular.
+  $r(phi) = p = "constant"$
