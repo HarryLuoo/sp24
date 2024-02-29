@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage[left=1in,right=0.75in,top=1in,bottom=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\begin{document}
+
+\textbf{Math 431 hw1}\\
+\textbf{Harry LUO} \\
+\begin{itemize}
+      \item [\textbf{ex 1.2}]
+
+      \item[a] Denote: Cereal as $C$, eggs as $E$, Fruits as $F$ .
+
+            sample space: $\Omega = \{(C,E),(C,F), (E,F )\} $ \\
+
+      \item[b] $A = \{(C,E),(C,F)\}$\\
+
+      \item[\textbf{ex 1.6}]
+
+      \item[a]For an urn with 3 $G$ and 4 $Y$, choose 2 balls randomly without replacement.\\
+            Assuming that  the balls are only distinguishable by their color, and that the order matters, a possible sample space is
+            $$\Omega = \{ (G,Y),(G,G),(Y,Y),(Y,G)\}$$\\
+            Collection of events $A$ that contains two diffrent colored balls: $A = \{(G,Y),(Y,G)\}$ \\
+
+      \item[b ]The total number of ways to choose 2 balls from 7 is \\$|\Omega|=\binom{7}{2} = 21$,\\
+            To have 2 balls of different colors, we can draw 1 G and 1 Y. Thus, the number of ways to choose 2 balls of different colors is \\$|A|=\binom{3}{1} \binom{4}{1} = 12$.\\
+            So, the probability of drawing 2 balls of different colors is $$\frac{|A|}{|\Omega|}=\frac{12}{21} = \frac{4}{7}$$\\
+
+
+      \item[\textbf{ex 1.12}]
+      \item[a]
+
+            Probability that we need at most 3 rolls to see the number 4, while considering axiom 3:
+            $$P(X\leq 3) = P(X=1)+P(X=2)+P(X=3)$$
+            since it is a fair die, for each roll, we have a sample space:
+            $$\Omega = \{1,2,3,4,5,6\}$$.
+            For each roll, the collection of event would be one element in $\Omega$
+            Thus,
+            $$P(X=1) =\frac{1}{|\Omega|}= \frac{1}{6}$$
+            If we roll 2 times until the expected number, it means that for the first roll, there is a $\frac{5}{6}$prabability of not having the desired num. And we have $\frac{1}{6}$ probability of having the desired number. Thus,
+            $$P(X=2) = \frac{5}{6}\times\frac{1}{6}$$ Similarly, if we rolled 3 times, it would mean that we have $\frac{5}{6}\times \frac{5}{6}$chance of missing the number on the first 2 roll:
+            $$P(X=3) = (\frac{5}{6})^2\times\frac{1}{6}$$ Therefore,
+
+            $$P(X\leq 3) = \frac{1}{6}+\frac{5}{6}\times\frac{1}{6}+(\frac{5}{6})^2\times\frac{1}{6}=0.42$$\\
+
+      \item[b] We conclude from the last section that, if it took us N times to roll a desired number using a fair die, it suggests that we have went through a $(\frac{5}{6})^{N-1}$ chance of rolling anything but the wanted number for N times.\\
+            Therefore, the probability of rolling 2k times of die rolls is $$P(X=2k)=(\frac{5}{6})^{2k-1}\times \frac{1}{6}$$
+            We thus write the probability for us needing an even number of rolls as the following:
+
+            \begin{equation}
+                  P(\text{even number of rolls})= \sum_{k=1}^{\infty}(\frac{5}{6})^{2k-1}\times \frac{1}{6} = \frac{\frac{5}{6}\times \frac{1}{6}}{1-(\frac{5}{6})^2}=\frac{5}{11}
+            \end{equation}
+
+      \item[\textbf{ex 1.22}]
+      \item[a] A stack of cards contains 4 groups(hearts, diamonds, clubs, spades) of 13 cards each. We denote J as 11, Q as 12, K as 13, A as 14; denote heards as H, diamonds as D, clubs as C, and Spades as S. When we draw 1 card uniformly at random, the sample space could be written as:
+            \begin{equation}
+                  \Omega = \{(N_i,G_i)|N_i\in\{2,3,\dots,14\},G_i\in\{H,D,C,S\} \}
+            \end{equation}
+            Since we uniformly draw a card, the probability of picking any spcific card would be $P(Draw)\frac{1}{52}$.
+
+      \item[b]since the probability of drawing a specific card is $\frac{1}{52}$, $P(A)=\frac{3}{53}=\frac{1}{53}+\frac{1}{53}+\frac{1}{53}$ could be seen as the event of picking 3 specific cards at a time.
+
+      \item[c] In a probability space where we are dealing with a standard deck of 52 cards, the probabilities of any event are determined by the ratios of the number of favorable outcomes to the total number of outcomes (52).
+            To show that no event has a probability of $\frac{1}{5}$, we need to show that there is no integer $n$ such that $\frac{n}{52}=\frac{1}{5}$.  Since 52 is not divisible by 5, there is no such integer $n$ and thus no event has a probability of $\frac{1}{5}$.
+
+      \item[\textbf{ex 1.28}]
+      \item[a]when sampled without replacement, and considering 2 balls are drawn, The sample space \( \Omega \) for the experiment of drawing two balls without replacement from an urn with \( m \) green balls and \( n \) yellow balls can be described as follows:
+            \begin{equation*}
+                  \Omega = \{ (G_i, G_j), (Y_k, Y_l), (G_i, Y_k), (Y_k, G_i) \mid 1 \leq i < j \leq m, 1 \leq k < l \leq n \}
+            \end{equation*}
+            where \( G \) denotes a green ball, \( Y \) denotes a yellow ball, and the subscripts \( i, j, k, l \) represent individual balls.
+
+            The collection of events \( F \), which is a set of subsets of \( \Omega \), includes, among others, the following events of interest:
+            \begin{align*}
+                  E_G             & = \{ (G_i, G_j) \mid 1 \leq i < j \leq m \} \text{, the event of drawing two green balls,}  \\
+                  E_Y             & = \{ (Y_k, Y_l) \mid 1 \leq k < l \leq n \} \text{, the event of drawing two yellow balls,} \\
+                  E_{\text{same}} & = E_G \cup E_Y \text{, the event of drawing two balls of the same color.}
+            \end{align*}
+            The probability of drawing 2 balls of the same color is
+            \begin{equation*}
+                  P(E_{\text{same}}) = \frac{|E_{\text{same}}|}{|\Omega|} = \frac{\binom{m}{2} + \binom{n}{2}}{\binom{m+n}{2}} = \frac{m(m-1) + n(n-1)}{(m+n)(m+n-1)}
+            \end{equation*}
+
+      \item[b] When sampled with replacement, the sample space would now be simply has the size of $(m+n)^2$, since we draw twice from an urn with $(m+n)$ balls.
+            Following the same reasoning, the probability of drawing two balls of the same color is
+            \begin{equation*}
+                  P(E_{\text{same}}) = \frac{|E_{\text{same}}|}{|\Omega|} = \frac{m^2 + n^2}{(m+n)^2}
+            \end{equation*}
+
+      \item[\textbf{ex 1.32}]
+            The sample space $\Omega$ is the set of all possible outcomes, which can be represented as:
+            \[
+                  \Omega = \left\{ (Rank_i, Suit_j) \mid Rank_i \in \{2, 3, \ldots, 10, J, Q, K, A\}, Suit_j \in \{\text{Hearts}, \text{Diamonds}, \text{Clubs}, \text{Spades}\} \right\}
+            \]
+            A full house, as given in the question, is a union of two events: the event of drawing three cards of the same rank and the event of drawing two cards of another same rank. The probability of drawing a full house is then the sum of the probabilities of these two events.
+            There are 13 different ranks and we want to choose 1 of them for the three-of-a-kind. With the chosen rank, there are $\binom{4}{3}$ ways to choose the three cards of the same rank. $$P(\rm \text{3 of a kind})= 13\times \binom{4}{3}$$
+            Then, there are 12 remaining ranks and we want to choose 1 of them for the two-of-a-kind. With the chosen rank, there are $\binom{4}{2}$ ways to choose the two cards of the same rank. $$P(\rm \text{2 of a kind})= 12\times \binom{4}{2}$$
+            The total number of ways to choose 5 cards from 52 is $\binom{52}{5}$.
+            Thus, the probability of drawing a full house is \begin{equation*}
+                  P(\text{Full House}) = \frac{13\times \binom{4}{3} \times 12\times \binom{4}{2}}{\binom{52}{5}}
+            \end{equation*}
+
+
+      \item[ex 1.34]  The circle's centea must be at least $\frac{1}{3}$ away from each side of the square. Thus, if we put the lower-left corner of the square at the origin of a cartesian coordinate,
+            then the sample space $\Omega$ is defined as the set of all points inside the unit square:
+            \[ \Omega = \{(x, y) \mid 0 < x < 1, 0 < y < 1\} \]
+
+            The event $E$ that the circle lies entirely inside the square is given by:
+            \[ E = \{(x, y) \mid \frac{1}{3} < x < \frac{2}{3}, \frac{1}{3} < y < \frac{2}{3}\} \]
+
+            The probability $P$ of the circle being entirely inside the square is the ratio of the area of $E$ to the area of $\Omega$:
+            \[ P(E) = \frac{\text{Area of } E}{\text{Area of } \Omega} = \frac{\left(\frac{1}{3}\right)^2}{1^2} = \frac{1}{9} \]
+
+      \item[\textbf{ex 1.36}]
+      \item[a]  Given a uniform random point $(X, Y)$ inside the unit square $[0, 1] \times [0, 1]$, since the distribution is uniform, the probability that the x-coordinate lies in a specific interval $(a, b)$ is given by the length of the interval:
+      \[ P(a < X < b) = b - a \]
+      
+      (b) The probability that the absolute difference between the x-coordinate and y-coordinate is less than or equal to $\frac{1}{4}$ can be visualized as two bands on either side of the line $Y = X$ within the unit square. Each band has a width of $\frac{1}{4}$, thus the total area of these bands represents the probability:
+      \[ P(|X - Y| \leq \frac{1}{4}) = \text{Area of the bands} = \frac{3}{8}\]
+      
+      
+
+
+
+
+
+
+
+
+
+\end{itemize}
+
+
+\end{document}

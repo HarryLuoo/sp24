@@ -86,7 +86,16 @@ Bounded motion: $[x_1,x_2]$; unbounded motion: $x>x_3$
   $
   It's period is given by @3.equ.period. Solving it gives us $
   T(E) = 4 sqrt(l/g) integral_0^(pi/2) (dif u)/(sqrt(1-k ^2 sin^2(u))) \ "where" k = sin(theta_0/2), sin u = 1/k sin(theta_0/2)
+  $ <3.equ.pend>
+  @3.equ.pend can be simplified by small angle approx into $
+  T(E) = 2 pi sqrt(l/g) (1+(theta_0^2/16))
   $
+== Effective DOF=1 system
+When the largrangian is of the form $L = f(dot(x))- g(x)$, we can see it as a system with effective potential $U_"eff"(x) = g(x) $, and effective kenetic energy $T_"eff"(x) = f(dot(x))$. The effective energy is therefore $E = T_"eff"  + U_"eff"$.\
+
+= Two body problem
+
+  
   
   
   
