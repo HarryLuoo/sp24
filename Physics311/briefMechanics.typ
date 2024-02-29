@@ -2,8 +2,9 @@
 #set page(margin: (x: 1cm, y: 1cm))
 #set math.equation(numbering:"(1)")
 
-#text(font: "Cambria",size: 14pt,weight: "black")[Brief Mechanics, Part 1\
-Survey of main ideas and equations up till Exam 1]
+#text(font: "Cambria",size: 14pt,weight: "black")[Brief Mechanics\
+Survey of main ideas and equations up till Exam 1]\
+work in progress...
 #line(length: 100%, stroke: (thickness: 2pt))
 =  Equation of Motion: \ Lagragian, Principle of Least Action, and E-L Equation\
  == Larangian: 
@@ -93,13 +94,18 @@ Bounded motion: $[x_1,x_2]$; unbounded motion: $x>x_3$
 == Effective DOF=1 system
 When the largrangian is of the form $L = f(dot(x))- g(x)$, we can see it as a system with effective potential $U_"eff"(x) = g(x) $, and effective kenetic energy $T_"eff"(x) = f(dot(x))$. The effective energy is therefore $E = T_"eff"  + U_"eff"$.\
 
+#line(length: 100%)
+
 = Two body problem
+== Problem setup
+- The two body problem considers two interacting masses with an interacting potential $U(r_1,r_2)=U(|arrow(r_1)-arrow(r_2)|)$. The lagrangian is given by $ L = 1/2 m_1 dot(arrow(r_1))^2 +1/2m_2 dot(arrow(r_2))^2 - U(|arrow(r_1)-arrow(r_2))|) $
+== COM and reletive coordinates, DOF= 6 -> DOF = 2
+- reduced mass $mu =(m_1 m_2)slash(m_1+m_2) =m _(1) m_2  slash M  $;\ Center of mass $R = (m_1 r_1 +m_2 r_2) slash (M)$;\ relative positon $arrow(r) = arrow(r_1)-arrow(r_2)$;  \
+- Putting the two body system into relative coordinates, and represent masses with reduced mass and COM, we have the following lagrangian: $ L =1/2 M dot(arrow(R))^2 +  1/2 mu dot(arrow(r))^2- U(arrow(r)) $
+where the first term involves only the COM motion, and the second term involves only the relative motion.\
+- By choosing our frame with the COM at rest and the total momentum zero, our problem is simplified to an  * effective one body problem* with DOF = 2, given by $
+L = 1/2 mu dot(arrow(r))^2 - U(arrow(r))
+$
 
-  
-  
-  
-  
-
-
-
+== 
 
