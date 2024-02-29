@@ -1,5 +1,5 @@
-#set heading(numbering: "1.I")
-#set page(margin: (x: 1cm, y: 1cm))
+#set heading(numbering: "1.1)")
+#set page(margin: (x: 1cm, y: 1cm),numbering: "1/1")
 #set math.equation(numbering:"(1)")
 
 #text(font: "Cambria",size: 14pt,weight: "black")[Brief Mechanics\
@@ -107,5 +107,33 @@ where the first term involves only the COM motion, and the second term involves 
 L = 1/2 mu dot(arrow(r))^2 - U(arrow(r))
 $
 
-== 
+== Conservation of Angular Momentum
+- Angular momentum is defiined as $arrow(L) = arrow(r) times mu dot(arrow(r)) $, and is conserved here.\
+- Knowing $arrow(r) dot arrow(L)=0$, the motion is in the plane perpendicular to $arrow(L)$. We can use polar coordinates to describe the motion, $
+L = 1/2 mu (dot(r)^2 + r^2 dot(theta)^2) - U(r)
+$<4.equ.polar>
+Using EL equation on @4.equ.polar, we get $
+(dif )/(dif t) (diff L)/(diff dot(phi)) = (diff L)/(diff phi) \ => arrow(L_z) equiv mu r^2 dot(theta) = "constant" \ ("conservation of angular momentum on z-axis")
+$
 
+
+== Kepler's second Law
+We calculate the differential of area swept by particle in polar coordinates, $
+dif A = 1/2 r^2 dif phi \ => (dif A)/(dif t) = 1/(2 mu) arrow(L_z) \ arrow(L_z) = 2 mu dot(A) ("constant")
+$
+This is the Kepler's second law, which states that the area swept by the radius in a given time is constant.
+
+== EOM for two body system
+- The total energy: $ 
+  E = T + U  &= 1/2 mu dot(r)^2  + 1/2 mu r^2 dot(phi)^2+ U(r)  
+  \ &= 1/2 mu dot(r)^2 + U(r)+ (L_z ^2)/(2 mu r ^2)  "(Notice" L_z = mu r ^2 dot(phi) $ <4.equ.t>
+solving this ODE by integration gives $
+ t(r))=integral (dif r)/(sqrt(2/mu)[E - U(r)- (L_z^2)/(2 mu r ^2)]) + C $
+
+ - Also from $L_z = mu r ^2 dot(phi)$, by integrating with respect to time, we get $
+ phi(t) = (L_z)/(mu)integral (dif t)/(r ^2(t))+C'
+ $<4.equ.phi>
+
+@4.equ.phi and @4.equ.t describe the relative motion of the two body system in terms of constants ${E,L_z,C,C'}$
+
+== Shape of orbit
