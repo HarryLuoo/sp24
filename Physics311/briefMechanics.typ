@@ -81,6 +81,14 @@ Bounded motion: $[x_1,x_2]$; unbounded motion: $x>x_3$
   $ T(E) = sqrt(2m) integral_(x_1(E))^(x_2(E))(dif x)/(sqrt(E - U(x))) $<3.equ.period>
    where we represent $x_1(E),x_2(E)$ in terms of $E$. \
   When given $U(x)$, we can solve for $x_1(E),x_2(E)$, and then pluging in to @3.equ.period, we can solve for period by integration via subsitution. \
+  *Simple Pendulum* in polar coord's has the following:$
+  T = 1/2 m l^2 dot(theta)^2 \ U = m g l (1-cos(theta)) \ 
+  $
+  It's period is given by @3.equ.period. Solving it gives us $
+  T(E) = 4 sqrt(l/g) integral_0^(pi/2) (dif u)/(sqrt(1-k ^2 sin^2(u))) \ "where" k = sin(theta_0/2), sin u = 1/k sin(theta_0/2)
+  $
+  
+  
   
 
 
