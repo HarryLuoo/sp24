@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../321"
+		},
+		{
+			"path": "../../badgerloop/race-profile"
+		},
+		{
+			"path": "../physics 104"
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "Default Dark Modern",
+		"window.zoomLevel": 1,
+		"editor.fontSize": 15,
+		"typst-companion.extension.orderedList.autoRenumber": true,
+		"typst-math.renderingMode": "medium"
+	}
+}
