@@ -20,3 +20,9 @@ work in progress...
 
 //part1: covers lec 1 - 13, i.e. exam 1 content
 #include "part1.typ"
+
+//part2: exam 2 content
+
+
+//Appendix
+#include "apnd.typ"
