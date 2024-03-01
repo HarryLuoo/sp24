@@ -1,14 +1,15 @@
 #set heading(numbering: "1.1)")
-#set page(margin: (x: 1cm, y: 1cm),numbering: "1/1")
+#set page(margin: (x: 0.2cm, y: 0.3cm),numbering: "1/1", columns: 2)
 #set math.equation(numbering:"(1)")
-#show math.equation: set text(12pt)
-#text(font: "Cambria",size: 14pt,weight: "black")[Brief Mechanics\
-Survey of main ideas and equations up till Exam 1]\
+#show math.equation: set text(11pt)
+#set math.cases(gap: 0.5em)
+#text(font: "Cambria",size: 14pt,weight: "black")[Brief Mechanics\ Notes from Physics 311]\
+Harry Luo\ 
 work in progress...
 #line(length: 100%, stroke: (thickness: 2pt))
 =  Equation of Motion: \ Lagragian, Principle of Least Action, and E-L Equation\
  == Larangian: 
-- Under the constraint of \ 1)Space and time are homogenous, 2)time is isotropic, the Larangian for a system is defined as 
+- Under the constraint of \ 1)Space and time are homogenous, 2)time is isotropic, the Larangian for a system is given as 
 $
 L = T - U(r), "where" cases(T = sum_(a=1)^N 1/2 m_a dot(q_a)^2 "summation of kenetic energy", "U: potential energy")
 $
@@ -26,9 +27,9 @@ Upon applying the El equation to a generalized lagrangian, we reveal Newton's se
 m dot(arrow(v))= -(diff U)/(diff q) equiv arrow(F) ("force")
 $
 == coordinate transformation:
-- In cartesian coordinates, $L = 1/2 m (dot(x)^2+dot(y)^2+ dot(z)^2)$\ In cylindrical coordinates, $L = 1/2 m (dot(r)^2+r^2 dot(theta)^2+dot(z)^2)$\ In spherical coordinates, $L = 1/2 m (dot(r)^2+r^2 dot(theta)^2+r^2 sin^2(theta) dot(phi)^2)$
+- In cartesian coordinates, $L = 1/2 m (dot(x)^2+dot(y)^2+ dot(z)^2) - U$\ In cylindrical coordinates, $L = 1/2 m (dot(r)^2+r^2 dot(theta)^2+dot(z)^2) - U$\ In spherical coordinates, $L = 1/2 m (dot(r)^2+r^2 dot(theta)^2+r^2 sin^2(theta) dot(phi)^2) - U$
 
-- Note that when taking partial differentiations, we treat each variable and its derivative as independent variables. Don't ask why...\
+- Note that when taking partial differentiations, we treat each variable and its derivative as two independent variables. Don't ask why... We are doing physics here\
 #line(length: 100%)
 = Conservation Laws: \ Energy, Momentum, COM, and Angular Momentum\
 == Energy:
@@ -62,7 +63,7 @@ $
 arrow(L_z)= (diff L)/(diff dot(phi_a)) 
 $
 #line(length: 100%)
-= Integration of the equations of motion: 
+= Integration of the equations of motion: Connetcting Energy with motion 
 == Motion in 1 dimension
 - For a system with DOF=1, and with $(diff L)/(diff t) = 0 $ ( largrangian independent of time, i.e. energy conserved) , we can write the largrangian and total energy as
 $ L = 1/2 m dot(x)^2 - U(x), $ 
@@ -71,7 +72,7 @@ $ E = 1/2 m dot(x)^2 + U(x) $ <3.equ.enrgy>
 $ t = sqrt(m/2) integral (dif x) / (E - U(x)) + C $
 when given $U(x)$, and by plugging it into @3.equ.enrgy, we can solve for $x(t)$ by substitution. Tricks on sub: when $U(x)$ is of order 1, use u-sub; when it's of order 2, use trig-sub.\
  == Turning points
- #image("potential.png", width: 50%)
+ #image("potential.png", width: 40%)
 For a given potential function $U(x)$, the turning points are the points where the potential energy is equal to the total energy, i.e. $U(x) = E$. At turning points, the system is either just about to move, or just about to stop.\
 Only motion where potential is less or equal to total energy is allowed.\
 Bounded motion: $[x_1,x_2]$; unbounded motion: $x>x_3$
@@ -99,8 +100,9 @@ When the largrangian is of the form $L = f(dot(x))- g(x)$, we can see it as a sy
 = Two body problem
 == Problem setup
 - The two body problem considers two interacting masses with an interacting potential $U(r_1,r_2)=U(|arrow(r_1)-arrow(r_2)|)$. The lagrangian is given by $ L = 1/2 m_1 dot(arrow(r_1))^2 +1/2m_2 dot(arrow(r_2))^2 - U(|arrow(r_1)-arrow(r_2))|) $
+- 
 == COM and reletive coordinates, DOF= 6 -> DOF = 2
-- reduced mass $mu =(m_1 m_2)slash(m_1+m_2) =m _(1) m_2  slash M  $;\ Center of mass $R = (m_1 r_1 +m_2 r_2) slash (M)$;\ relative positon $arrow(r) = arrow(r_1)-arrow(r_2)$;  \
+- Consider the following handy subsitution, $ "Reduced mass" mu& =(m_1 m_2)slash(m_1+m_2) =m _(1) m_2  slash M  ;\ "Center of mass" R& = (m_1 r_1 +m_2 r_2) slash (M);\ "relative positon" arrow(r)& = arrow(r_1)-arrow(r_2) $ <4.equ.sub> \
 - Putting the two body system into relative coordinates, and represent masses with reduced mass and COM, we have the following lagrangian: $ L =1/2 M dot(arrow(R))^2 +  1/2 mu dot(arrow(r))^2- U(arrow(r)) $
 where the first term involves only the COM motion, and the second term involves only the relative motion.\
 - By choosing our frame with the COM at rest and the total momentum zero, our problem is simplified to an  * effective one body problem* with DOF = 2, given by $
@@ -146,19 +148,18 @@ dif phi = (L_z)/sqrt(2mu) (dif r)/(r^2 sqrt(E - U(r) - L_z^2/(2mu r^2))) \
 $
 
 == Effective potential and shape of orbit (Only for Attractive Potential)
-$ U_"eff"=U(r)+ L_z^2/(2mu r^2)\ 
-E = 1/2 mu dot(r)^2 + U_"eff"(r)  $
+$ U_"eff"=U(r)+ L_z^2/(2mu r^2); E = 1/2 mu dot(r)^2 + U_"eff"(r)  $
 - When $r->infinity$, $U_"eff"->U(r)$, and when $r->0$, $U_"eff"->"centrifutal potential" L_z^2/(2mu r^2)$.\
    
 - by graphing the effective potential, and given constraint of total energy E, we can analyze the shape of the orbit:
-#image("orbit.png", width: 80%) \
+#image("orbit.png", width: 90%) \
 - when $E>0$, the orbit is unbounded, open orbit, hyperbola.\
 - when $E < 0$, the orbit is bounded into a potential well, although not neccessarily closed.
 - when $E=E_min$, the orbit is circular, $F = -mu (v^2)/(r)$
 
 = The Kepler Problem: a special case of the two body problem
 == conditions
-$ U(r) = -alpha/r\ U_"eff"= -alpha/r + L_z^2/(2mu r^2) $
+$ U(r) = -alpha/r ;  U_"eff"= -alpha/r + L_z^2/(2mu r^2) $
 == Conic section orbits
 We can proof that the orbit is a conic section given by $
 #rect()[$ r(phi) = p/(1+e cos(phi)) $]
@@ -168,13 +169,21 @@ $
 == Classifications of orbits based on energy of system E 
 - When $E>0, e>1$, the orbit is unbounded, open orbit, hyperbola. $
 (x-c)^2/a^2-y^2/b^2
-= 1\ cases( a= p/(e^2 - 1),b = p/sqrt(e^2 - 1),c = a e, r_"min"=p/(1+e))
+= 1\ cases( a= p/(e^2 - 1)","b = p/sqrt(e^2 - 1)","c = a e, r_"min"=p/(1+e))
 $
 - when $E=0, e=1$, the orbit is parabola.$
   y^2 = p^2 - 2 x p, \ r_"min" = p/2
   $
 - when $E < 0, e<1$, the orbit is closed, ellipse.$
-(x+c)^2/a^2+y^2/b^2 = 1,\ cases( a= p/(1-e^2),b = p/sqrt(1-e^2),c = a e, r_"min"=p/(1+e), r_"max" = p/(1-e))
+(x+c)^2/a^2+y^2/b^2 = 1,\ cases( a= p/(1-e^2)","b = p/sqrt(1-e^2)","c = a e, r_"min"=p/(1+e)" ; " r_"max" = p/(1-e))
 $
 - When $E = E_"min", display(f = (mu alpha^2)/(2 L_z^2)), e=0$,  orbit is circular.
   $r(phi) = p = "constant"$
+
+#line(length: 100%)
+= More Kepler: Period, Kepler's third law
+== Orbit of each body
+recall @4.equ.sub, we can exprees the orbit of each body as such after some algebra: $
+cases(arrow(r_1)=(m_2)/(m_1+m_2)arrow(r),  arrow(r_2)=-(m_1)/(m_1+m_2)arrow(r))
+$
+when $m_1 = m_2 => arrow(r_1)=arrow(r)/2, arrow(r_2) = -arrow(r)/2$, COM inside $r_1 sect r_2$
