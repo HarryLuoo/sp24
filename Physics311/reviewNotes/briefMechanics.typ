@@ -1,9 +1,9 @@
 #set heading(numbering: "1.1")
-#show heading: text.with(size: 8pt, weight: 900, font: "Libre Baskerville")
-#set text(7pt)
-#set page(margin: (x: 0.2cm, y: 0.3cm),numbering: "1/1", columns: 4, flipped: true)
+#show heading: text.with(size: 11pt, weight: 900, font: "Libre Baskerville")
+#set text(10pt)
+#set page(margin: (x: 0.3cm, y: 0.3cm),numbering: "1/1", columns: 1, flipped: false)
 #set math.equation(numbering:"(1)")
-#show math.equation: set text(8pt)
+#show math.equation: set text(11pt)
 #set math.cases(gap: 0.5em)
 
 
@@ -72,10 +72,10 @@ $
 == Motion in 1 dimension
 - For a system with DOF=1, and with $(diff L)/(diff t) = 0 $ ( largrangian independent of time, i.e. energy conserved) , we can write the largrangian and total energy as
 $ L = 1/2 m dot(x)^2 - U(x), $ 
-$ E = 1/2 m dot(x)^2 + U(x) $ <3.equ.enrgy>
-@3.equ.enrgy is a differential equation of position and time. Solving this ODE for time gives: 
+$ E = 1/2 m dot(x)^2 + U(x) $ <3.eq.enrgy>
+@3.eq.enrgy is a differential equation of position and time. Solving this ODE for time gives: 
 $ t = sqrt(m/2) integral (dif x) / (E - U(x)) + C $
-when given $U(x)$, and by plugging it into @3.equ.enrgy, we can solve for $x(t)$ by substitution. Tricks on sub: when $U(x)$ is of order 1, use u-sub; when it's of order 2, use trig-sub.\
+when given $U(x)$, and by plugging it into @3.eq.enrgy, we can solve for $x(t)$ by substitution. Tricks on sub: when $U(x)$ is of order 1, use u-sub; when it's of order 2, use trig-sub.\
  == Turning points
  #image("potential.png", width: 40%)
 For a given potential function $U(x)$, the turning points are the points where the potential energy is equal to the total energy, i.e. $U(x) = E$. At turning points, the system is either just about to move, or just about to stop.\
@@ -84,17 +84,17 @@ Bounded motion: $[x_1,x_2]$; unbounded motion: $x>x_3$
 
 
  == Unbounded Motion:
-  When there is a potential well, the system could go into periodic motion with potential energy moving back and forth in the well, and position between $x_1,x_2$. We find period by doubling @3.equ.enrgy:
-  $ T(E) = sqrt(2m) integral_(x_1(E))^(x_2(E))(dif x)/(sqrt(E - U(x))) $<3.equ.period>
+  When there is a potential well, the system could go into periodic motion with potential energy moving back and forth in the well, and position between $x_1,x_2$. We find period by doubling @3.eq.enrgy:
+  $ T(E) = sqrt(2m) integral_(x_1(E))^(x_2(E))(dif x)/(sqrt(E - U(x))) $<3.eq.period>
    where we represent $x_1(E),x_2(E)$ in terms of $E$. \
-  When given $U(x)$, we can solve for $x_1(E),x_2(E)$, and then pluging in to @3.equ.period, we can solve for period by integration via subsitution. \
+  When given $U(x)$, we can solve for $x_1(E),x_2(E)$, and then pluging in to @3.eq.period, we can solve for period by integration via subsitution. \
   *Simple Pendulum* in polar coord's has the following:$
   T = 1/2 m l^2 dot(theta)^2 \ U = m g l (1-cos(theta)) \ 
   $
-  It's period is given by @3.equ.period. Solving it gives us $
+  It's period is given by @3.eq.period. Solving it gives us $
   T(E) = 4 sqrt(l/g) integral_0^(pi/2) (dif u)/(sqrt(1-k ^2 sin^2(u))) \ "where" k = sin(theta_0/2), sin u = 1/k sin(theta_0/2)
-  $ <3.equ.pend>
-  @3.equ.pend can be simplified by small angle approx into $
+  $ <3.eq.pend>
+  @3.eq.pend can be simplified by small angle approx into $
   T(E) = 2 pi sqrt(l/g) (1+(theta_0^2/16))
   $
 == Effective DOF=1 system
@@ -107,7 +107,7 @@ When the largrangian is of the form $L = f(dot(x))- g(x)$, we can see it as a sy
 - The two body problem considers two interacting masses with an interacting potential $U(r_1,r_2)=U(|arrow(r_1)-arrow(r_2)|)$. The lagrangian is given by $ L = 1/2 m_1 dot(arrow(r_1))^2 +1/2m_2 dot(arrow(r_2))^2 - U(|arrow(r_1)-arrow(r_2))|) $
 - 
 == COM and reletive coordinates, DOF= 6 -> DOF = 2
-- Consider the following handy subsitution, $ "Reduced mass" mu& =(m_1 m_2)slash(m_1+m_2) =m _(1) m_2  slash M  ;\ "Center of mass" R& = (m_1 r_1 +m_2 r_2) slash (M);\ "relative positon" arrow(r)& = arrow(r_1)-arrow(r_2) $ <4.equ.sub> \
+- Consider the following handy subsitution, $ "Reduced mass" mu& =(m_1 m_2)slash(m_1+m_2) =m _(1) m_2  slash M  ;\ "Center of mass" R& = (m_1 r_1 +m_2 r_2) slash (M);\ "relative positon" arrow(r)& = arrow(r_1)-arrow(r_2) $ <4.eq.sub> \
 - Putting the two body system into relative coordinates, and represent masses with reduced mass and COM, we have the following lagrangian: $ L =1/2 M dot(arrow(R))^2 +  1/2 mu dot(arrow(r))^2- U(arrow(r)) $
 where the first term involves only the COM motion, and the second term involves only the relative motion.\
 - By choosing our frame with the COM at rest and the total momentum zero, our problem is simplified to an  * effective one body problem* with DOF = 2, given by $
@@ -118,8 +118,8 @@ $
 - Angular momentum is defiined as $arrow(L) = arrow(r) times mu dot(arrow(r)) $, and is conserved here.\
 - Knowing $arrow(r) dot arrow(L)=0$, the motion is in the plane perpendicular to $arrow(L)$. We can use polar coordinates to describe the motion, $
 L = 1/2 mu (dot(r)^2 + r^2 dot(theta)^2) - U(r)
-$<4.equ.polar>
-Using EL equation on @4.equ.polar, we get $
+$<4.eq.polar>
+Using EL equation on @4.eq.polar, we get $
 (dif )/(dif t) (diff L)/(diff dot(phi)) = (diff L)/(diff phi) \ => arrow(L_z) equiv mu r^2 dot(theta) = "constant" \ ("conservation of angular momentum on z-axis")
 $
 
@@ -133,18 +133,18 @@ This is the Kepler's second law, which states that the area swept by the radius 
 == EOM for two body system
 - The total energy: $ 
   E = T + U  &= 1/2 mu dot(r)^2  + 1/2 mu r^2 dot(phi)^2+ U(r)  
-  \ &= 1/2 mu dot(r)^2 + U(r)+ (L_z ^2)/(2 mu r ^2)  "(Notice" L_z = mu r ^2 dot(phi) $ <4.equ.t>
+  \ &= 1/2 mu dot(r)^2 + U(r)+ (L_z ^2)/(2 mu r ^2)  "(Notice" L_z = mu r ^2 dot(phi) $ <4.eq.t>
 solving this ODE by integration gives $
  t(r))=integral (dif r)/(sqrt(2/mu)[E - U(r)- (L_z^2)/(2 mu r ^2)]) + C $
 
  - Also from $L_z = mu r ^2 dot(phi)$, by integrating with respect to time, we get $
  phi(t) = (L_z)/(mu)integral (dif t)/(r ^2(t))+C'
- $<4.equ.phi>
+ $<4.eq.phi>
 
-@4.equ.phi and @4.equ.t describe the relative motion of the two body system in terms of constants ${E,L_z,C,C'}$
+@4.eq.phi and @4.eq.t describe the relative motion of the two body system in terms of constants ${E,L_z,C,C'}$
 
 == Shape of orbit
-- @4.equ.t skipped a step, $
+- @4.eq.t skipped a step, $
 (dif r)/(dif t) = sqrt((2/mu)[E - U(r)- (L_z^2)/(2 mu r ^2)])
 $
 this equation, combined with our beloved $ L_z = mu r ^2 dot(phi) => dif phi = (L_z)/(mu r ^2) dif t $ we get the equation of orbit: $
@@ -188,7 +188,7 @@ $
 #line(length: 100%)
 = More Kepler: Period, Kepler's third law
 == Orbit of each body
-recall @4.equ.sub, we can exprees the orbit of each body as such after some algebra: $
+recall @4.eq.sub, we can exprees the orbit of each body as such after some algebra: $
 arrow(r_1)=(m_2)/(m_1+m_2)arrow(r)"  ;  "arrow(r_2)=-(m_1)/(m_1+m_2)arrow(r)
 $
 - when $m_1 = m_2 => arrow(r_1)=arrow(r)/2, arrow(r_2) = -arrow(r)/2$, COM inside $r_1 sect r_2$
@@ -208,4 +208,42 @@ $arrow(A)= arrow(v) times arrow(L)- (alpha arrow(r))slash(r)$ is conserved, and 
 #line(length: 100%)
 =  Orbital Transfer
 == Instantaneous Change in velocity
+$ (E,L_z) -> (E',L'_z) \ => (e,p)->(e',p') $
+if thrust occur when satellite is at angle $phi_0$, orbit orientation can change:
+$
+r(phi_0)=p/(1+e cos phi_0) = p'/(1+e' cos( phi_0-delta)) $ <7.eq.r>
 
+== Tangential thrust at perigee
+#image("tangentialThrust.png", width: 30%)
+at $phi=0$, let $v=v_"init", v' = v_"right after", lambda=v'slash v $
+$
+L_z = mu r_0 v =>L'_z = mu r_0 v' =lambda L_z\ 
+p' = lambda^2 p
+$
+From @7.eq.r, $
+p/(1+e)=lambda^2 p/(1-e')=>e' = lambda^2(1+e)-1
+$
+if $lambda>1$, $e'>e$, the satellite is in a higher, more eliptical orbit. Unbound if $lambda$ big enough\
+if $lambda<1$, $e'<e$, the satellite is in a lower orbit.\
+== changing between circular orbits
+- changing from $R$ to $R'$, two thrusts($lambda_1,lambda_2$) are needed. There is also an intermediate orbit $ r(phi )= p'slash (1+e' cos phi), \ "where " p'=lambda_1^2p, e'= lambda^2_1 - 1 $
+changed from indermetiade to final,
+$
+r(phi = pi) = R' = lambda_2^2 R slash (2-lambda_1^2)\ 
+=> lambda_1 = sqrt((2R')/(R+R'))
+$
+final orbit: $
+r(phi)= R'; e'' = 0, p'' = R'\ 
+=> p'' = lambda_2^2 p' = p' slash (1 - e')\
+=> lambda_2 = sqrt((R+R')/(2R'))
+$  
+== Verify: 
+using Newton 2nd, $
+alpha/R^2 = mu v_R^2 / R \
+=> v_R = sqrt(alpha/mu R)\
+=>V_R'/V_R = sqrt(R/R')
+$<7.eq.v>
+verify using conservation of angular momentum, $
+R v(phi = 0)= R'v(phi = pi), \ V_R' = lambda v(phi=pi)=lambda_2 v(phi=pi)/v(phi=0)lambda_1 v_R\ 
+=> v_R'/v_R = sqrt(R/R')
+$ agrees with @7.eq.v !!
