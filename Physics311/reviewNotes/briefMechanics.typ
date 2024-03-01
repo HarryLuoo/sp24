@@ -1,9 +1,14 @@
-#set heading(numbering: "1.1)")
-#set page(margin: (x: 0.2cm, y: 0.3cm),numbering: "1/1", columns: 2)
+#set heading(numbering: "1.1")
+#show heading: text.with(size: 10.2pt, weight: 900, font: "Libre Baskerville")
+#set text(10pt)
+#set page(margin: (x: 0.2cm, y: 0.3cm),numbering: "1/1", columns: 3, flipped: true)
 #set math.equation(numbering:"(1)")
 #show math.equation: set text(11pt)
 #set math.cases(gap: 0.5em)
-#text(font: "Cambria",size: 14pt,weight: "black")[Brief Mechanics\ Notes from Physics 311]\
+
+
+
+#text(font: "Cambria",size: 12pt,weight: "black")[Brief Mechanics\ Notes from Physics 311]\
 Harry Luo\ 
 work in progress...
 #line(length: 100%, stroke: (thickness: 2pt))
@@ -11,7 +16,7 @@ work in progress...
  == Larangian: 
 - Under the constraint of \ 1)Space and time are homogenous, 2)time is isotropic, the Larangian for a system is given as 
 $
-L = T - U(r), "where" cases(T = sum_(a=1)^N 1/2 m_a dot(q_a)^2 "summation of kenetic energy", "U: potential energy")
+L = T - U(r), "where" cases(T = sum_(a=1)^N 1/2 m_a dot(q_a)^2 "sum of KE", "U: potential energy")
 $
 == E-L equation
 For a given functional, $
@@ -186,4 +191,12 @@ $
 recall @4.equ.sub, we can exprees the orbit of each body as such after some algebra: $
 cases(arrow(r_1)=(m_2)/(m_1+m_2)arrow(r),  arrow(r_2)=-(m_1)/(m_1+m_2)arrow(r))
 $
-when $m_1 = m_2 => arrow(r_1)=arrow(r)/2, arrow(r_2) = -arrow(r)/2$, COM inside $r_1 sect r_2$
+- when $m_1 = m_2 => arrow(r_1)=arrow(r)/2, arrow(r_2) = -arrow(r)/2$, COM inside $r_1 sect r_2$
+- when $m_1 >> m_2 => arrow(r_1) = arrow(r), arrow(r_2) = 0$, $m_1$ is at rest, $m_2$ orbits $m_1$
+
+== Period of orbit
+- $L_z = 2 mu dot(A)$, areal vel. is constant
+- Integrating $dot(A)$ over a period,$
+A = integral_(0)^(T)dot(A) dif t = (L_z T)/(2mu)
+$
+
