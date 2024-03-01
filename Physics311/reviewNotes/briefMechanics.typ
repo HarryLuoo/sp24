@@ -1,9 +1,9 @@
 #set heading(numbering: "1.1")
-#show heading: text.with(size: 10.2pt, weight: 900, font: "Libre Baskerville")
-#set text(10pt)
-#set page(margin: (x: 0.2cm, y: 0.3cm),numbering: "1/1", columns: 3, flipped: true)
+#show heading: text.with(size: 8pt, weight: 900, font: "Libre Baskerville")
+#set text(7pt)
+#set page(margin: (x: 0.2cm, y: 0.3cm),numbering: "1/1", columns: 4, flipped: true)
 #set math.equation(numbering:"(1)")
-#show math.equation: set text(11pt)
+#show math.equation: set text(8pt)
 #set math.cases(gap: 0.5em)
 
 
@@ -189,7 +189,7 @@ $
 = More Kepler: Period, Kepler's third law
 == Orbit of each body
 recall @4.equ.sub, we can exprees the orbit of each body as such after some algebra: $
-cases(arrow(r_1)=(m_2)/(m_1+m_2)arrow(r),  arrow(r_2)=-(m_1)/(m_1+m_2)arrow(r))
+arrow(r_1)=(m_2)/(m_1+m_2)arrow(r)"  ;  "arrow(r_2)=-(m_1)/(m_1+m_2)arrow(r)
 $
 - when $m_1 = m_2 => arrow(r_1)=arrow(r)/2, arrow(r_2) = -arrow(r)/2$, COM inside $r_1 sect r_2$
 - when $m_1 >> m_2 => arrow(r_1) = arrow(r), arrow(r_2) = 0$, $m_1$ is at rest, $m_2$ orbits $m_1$
@@ -199,4 +199,13 @@ $
 - Integrating $dot(A)$ over a period,$
 A = integral_(0)^(T)dot(A) dif t = (L_z T)/(2mu)
 $
+Since area swept over a period is the area of the ellipse, we have $
+pi a b = (L_z T)/(2mu)  ",letting:" b=sqrt(p a), p=(L_z^2)/(mu alpha) \ => T = (2 pi a^(3 slash 2))sqrt(mu/alpha\ ) $
+
+== Conservation of Laplace-Runge-Lenz vector
+$arrow(A)= arrow(v) times arrow(L)- (alpha arrow(r))slash(r)$ is conserved, and is perpendicular to the orbit plane. We can use it to verify : conic sections, eccentricity, and period.\
+- conserved quantity: $arrow(A) dot arrow(L)=0, A/alpha = sqrt(1+ (2 E L_z^2)/(mu alpha ^2))$
+#line(length: 100%)
+=  Orbital Transfer
+== Instantaneous Change in velocity
 
