@@ -126,7 +126,22 @@ $
 
 (g)
 $
-E(5X^2 + 3X) = integral_(-infinity)^(infinity) 3x^(-2) dif x + 3 times 3/2 = 15/2 + 9/2 = 12
+E(5X^2 + 3X) = integral_(1)^(infinity) (5x^(-2)+ 3 x)3x^(-4) dif x = 39/2
 $
 
 == ex 3.47
+
+#image("hw4_trig.png", width: 30%)
+
+(a)when X is below 0, cdf is 0; when X is above 30, cdf is 1.\ when X is between 0 and 30, the set of points in the triangle with $X <= x$ would have vertices $(0,0),(x,0), (x,2x/3)$, with area $1/3 x^2$, while the original triangle has size 300.
+$
+F(X) =  cases(0 "X <0", (1/3x^2)slash 300=x^2/900 "0 <= x < 30",  1 "x >= 30".)\
+$
+
+(b)Since F(x) is continous and differentiable(besides x = 30), the pdf is the derivative of F(x), which is $
+f(x) = cases(2x/900=x/450 "0 <= x < 30", 0 "o.w.",)
+$
+
+(c) Notice X is continuous,$
+E(X)= integral_(-infinity)^(+infinity) x f(x) dif x = integral_0^(30) x^2/450 dif x = 20\
+$
