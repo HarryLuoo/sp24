@@ -1,7 +1,7 @@
 #set heading(numbering: "1.1")
 #show heading: text.with(size: 11pt, weight: 900, font: "Libre Baskerville")
 #set text(11pt)
-#set page(margin: (x: 0.5cm, y: 0.5cm),numbering: "1/1", columns: 1, flipped: false)
+#set page(margin: (x: 0.5cm, y: 0.5cm),numbering: "1/1", columns: 2, flipped: false)
 #set math.equation(numbering:"(1)")
 #show math.equation: set text(11pt)
 #set math.cases(gap: 0.5em)
