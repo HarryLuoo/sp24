@@ -22,7 +22,7 @@ work in progress...
 #include "part1.typ"
 
 //part2: exam 2 content
-
+#include "part2.typ"
 
 //Appendix
 #include "apnd.typ"
