@@ -13,7 +13,7 @@ $ 2Phi(2epsilon sqrt(n)) -1= 0.95\
 Phi(2*0.02sqrt(n))=1.95/(2) $
 accroding to the table of Phi values, we have
 $ 0.04sqrt(n) = 1.96\ 
-=> n = 2401 $ 
+=> #rect(inset: 8pt)[ $ display(n = 2401)$ ]   $ 
 therefore the smallest size should be 2401
 
 == ex4.8
@@ -41,7 +41,7 @@ We can now calculate the approximation for scroing 3 goals as #rect(inset: 8pt)[
 
 
 == ex4.34
-Assume that accidents happen rarely and independently. We can model the number of accidents happen in a week with a Poisson distribution. We denote the r.v. X as the number of accidents in a week, and we have $X~"Poisson"(lambda)$, where lambda is the average number of accidents in a week, given as $lambda = 3$ Therefore, the probability of *at most* 2 accidents happening next week can be calculated as $ P(X=1) +P(X=2) +P(X=0) = (e^(-3)) ((3^(1) )/(1) + (3^(2) )/(2*1)+(3^(3) )/(3*2*1))  = 0.59744  $ 
+Assume that accidents happen rarely and independently. We can model the number of accidents happen in a week with a Poisson distribution. We denote the r.v. X as the number of accidents in a week, and we have $X~"Poisson"(lambda)$, where lambda is the average number of accidents in a week, given as $lambda = 3$ Therefore, the probability of *at most* 2 accidents happening next week can be calculated as $ P(X=1) +P(X=2) +P(X=0) = (e^(-3)) ((3^(1) )/(1) + (3^(2) )/(2*1)+(3^(3) )/(3*2*1))  = #rect(inset: 8pt)[ $ display(0.59744)$ ]   $ 
 
 = ex4.46
 We can consider the series of trials of "flipping a coin 5 times each day for 30 days" as a binomial distribution, where we either get 5 tails each day or not. We denote the r.v. X as the number of days that we get 5 tails. The probability of having 5 tails in a day is $p=(1)/(2^5) = 1/32$. Therefore, $X~"Bin"(30,1/32)$\
@@ -51,7 +51,7 @@ Since $n p(1-p) = 465/512$, the normal approximation is not valid.
 Poisson approximation is a bettor choice, especially when our $n p = 15 slash 512 $ is small.
 
 We approximate the distribution of X with r.v. $Y ~"Poisson"(lambda)"where" lambda = E(X)=n p = 30/32 = 0.9375$.
-Thus, $ P(X=2) approx P(Y=2)=(e^(-0.9375) 0.9375^(2) )/(2) approx 0.1721 $ 
+Thus, $ P(X=2) approx P(Y=2)=(e^(-0.9375) 0.9375^(2) )/(2) approx #rect(inset: 8pt)[ $ display( 0.1721)$ ] $ 
 
 == ex5.2
 - (a  ) 
@@ -74,7 +74,7 @@ As calculated in (a).
 Given $X~"Geom"(p)$,  the probability mass function is $P(X=k) = p(1-p)^(k-1)$, where k=1,2,3,...
 
 $ M_X (t)=E(e^(t X) )=&sum_(k=1)^(infinity)e^(t k) P(X=k) =  sum_(k=1)^(infinity)e^(t k)p(1-p)^(k-1) = p e^(t) sum_(k=1)^(infinity)(e^(t) (1-p))^(k-1) \ =&  p e^(t) sum_(k=0)^(infinity)(e^(t) (1-p))^(k)    $ 
-when $e^(t) (1-p)<1, "i.e." t < ln(1/(1-p)),$ the series converges, and  $ M_X (t) = (p e^(t))/(1-e^(t)(1-p) ) $  
+when $e^(t) (1-p)<1, "i.e." t < ln(1/(1-p)),$ the series converges, and  $ #rect(inset: 8pt)[ $ display(M_X (t) = (p e^(t))/(1-e^(t)(1-p) ) )$ ] $  
 while $t >= ln(1/(1-p))$ , the series diverges, and $ M_X (t) = +infinity $
 
 
@@ -84,5 +84,12 @@ E(X^2)=M''_X (0)=(p e^(t) )/((1-e^(t) (1-p))^2)|_(t=0) = 2/p^2 - 1/p \
 "Var"(X) = E(X^2)-E(X)^2 = 1/p^2 - 1/p $  
 == ex 5.20
 
-- (a) by def, we know $ M_X (t) = integral_(-infinity)^(infinity)e^(t x) * 1/2 e^(-|x|)  d x = 1/2integral_(0)^(infinity)e^((-1-t)x)d x + 1/2integral_(-infinity)^(0)e^((t+1)x) d x    $ 
+- (a) by def, we know $ M_X (t) =& integral_(-infinity)^(infinity)e^(t x) * 1/2 e^(-|x|)  d x = 
+ 1/2integral_(0)^(infinity)e^((-1-t)x)d x + 1/2integral_(-infinity)^(0)e^((t+1)x) dif x  \ && "x -> -x" \ =&   1/2integral_(0)^(infinity)e^((-1-t)x)d x + 1/2integral_(0)^(infinity)e^(-(t+1)x) dif x  $ 
 
+Noticing that $integral_(0)^(infinity)e^(-c x)   dif x $ converges to $1/c$ iff c>0, we can get $ #rect(inset: 8pt)[ $ display(M_X (t) = cases(display(1/2(1/(1-t))+1/2(1/(1+t)) = 1/(2(1-t^2)) ", when" -1 <t<1 ),infinity "O.W." ))$ ]  $    
+
+- (b)
+  Taylor expanding $M_X (t)$ at t=0 when $-1 <t<1$, we have $ M_X (t) = 1/(2(1-t^2)) = 1/2 + t^2/2 + t^4/2 + t^6/2 + ... = sum_(k=0)^(infinity) 1/2t^(2k)  $ 
+
+  Therefore, #rect(inset: 8pt)[ $ display("odd-numbered moments are all 0, and the 2k-th moment is" 1/2 t^(2k)  )$ ] 
