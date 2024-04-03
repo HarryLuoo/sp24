@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.9)  19 FEB 2024 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.22)  2 APR 2024 21:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/26790/Documents/1classes/24sp/431/hw/1/hw1.tex
-(c:/Users/26790/Documents/1classes/24sp/431/hw/1/hw1.tex
+**c:/Users/26790/Documents/1classes/24sp/HWnotes/431/hw/1/hw1.tex
+(c:/Users/26790/Documents/1classes/24sp/HWnotes/431/hw/1/hw1.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -241,12 +241,12 @@ L3 programming layer <2024-01-22>
  ) 
 Here is how much of TeX's memory you used:
  2759 strings out of 476187
- 41513 string characters out of 5794166
+ 41537 string characters out of 5794165
  1940978 words of memory out of 5000000
  24763 multiletter control sequences out of 15000+600000
  560076 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,11n,65p,405b,199s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,413b,199s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 Output written on hw1.pdf (3 pages, 110914 bytes).
 PDF statistics:

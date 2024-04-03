@@ -1,10 +1,11 @@
-#set heading(numbering: "1.I")
+#set heading(numbering: "1.1")
 #set page(margin: (x: 1cm, y: 1cm))
-#text(font: "Cambria",size: 14pt,weight: "black")[Brief Theory of Probability, Part 1\
-Survey of main ideas and equations]
-
-\
+#text(font: "Cambria",size: 14pt,weight: "black")[Brief Theory of Probability: Notes from MATH 431]\ Compiled by Harry Luo
 #line(length:100%, stroke:(thickness: 2pt))
+#outline(
+  indent: auto,
+)
+#pagebreak()
 
 //part1: exam1 contents
 #include "part1.typ"

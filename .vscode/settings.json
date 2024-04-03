@@ -1,5 +1,8 @@
 {
     "workbench.colorTheme": "Solarized Dark",
     "editor.fontSize": 16,
-    "window.zoomLevel": 0.5
+    "window.zoomLevel": 0.5,
+    "cSpell.enableFiletypes": [
+        "typst"
+    ]
 }

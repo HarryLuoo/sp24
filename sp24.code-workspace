@@ -7,5 +7,9 @@
 			"path": "../physics 104"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.enableFiletypes": [
+			"typst"
+		]
+	}
 }

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1708396061.61709 "c:/Users/26790/Documents/1classes/24sp/431/hw/1/hw1.tex" "hw1.pdf" "hw1" 1708396062.03557 0
+["pdflatex"] 1712113101.00229 "c:/Users/26790/Documents/1classes/24sp/HWnotes/431/hw/1/hw1.tex" "hw1.pdf" "hw1" 1712113101.71304 0
   "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1679818792 1004 54797486969f23fa377b128694d548df ""
   "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1679818792 916 f87d7c45f9c908e672703b83b72241a3 ""
   "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1679818792 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -41,10 +41,10 @@
   "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1707543254 678 4792914a8f45be57bb98413425e4c7af ""
   "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-dist/web2c/texmf.cnf" 1707543247 41009 84b61f42d16d06bedb915f57aa2374cf ""
   "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1707543942 294050 4f0df60652d56ef4226f18079e7f598a ""
-  "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1707543347 6800982 a2f81b99f2fec78a0d892e01cb9bef44 ""
+  "c:/Users/26790/AppData/Roaming/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1711137426 6800960 8c77c8a0623e331ec104116cf1f885f3 ""
   "c:/Users/26790/AppData/Roaming/TinyTeX/texmf.cnf" 1679818772 903 164c5b127cd0d6dc91abad2f62421ea2 ""
-  "c:/Users/26790/Documents/1classes/24sp/431/hw/1/hw1.tex" 1707515694 9431 483879181b3d3c6a996622e9bb12c867 ""
-  "hw1.aux" 1708396061 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "c:/Users/26790/Documents/1classes/24sp/HWnotes/431/hw/1/hw1.tex" 1707515694 9431 483879181b3d3c6a996622e9bb12c867 ""
+  "hw1.aux" 1712113101 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
   "hw1.tex" 1707515694 9431 483879181b3d3c6a996622e9bb12c867 ""
   (generated)
   "hw1.aux"

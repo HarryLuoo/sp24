@@ -1,0 +1,45 @@
+documentclass[12pt]{article}
+usepackage{amsmath}
+\begin{document}
+
+
+
+
+Let $(X, Y)$ be a uniformly distributed random point on the quadrilateral $D$ with vertices $(0,0)$, $(2, 0)$, $(1, 1)$ and $(0, 1)$.
+
+(a) The area of $D$ is $\frac{3}{2}$, so the joint p.d.f. is
+$$f_{X,Y}(x,y) = \begin{cases}
+\frac{2}{3}, & (x,y) \in D \\\\
+0, & (x,y) \notin D.
+\end{cases}$$
+
+The line segment from $(1,1)$ to $(2,0)$ that forms part of the boundary of $D$ satisfies the equation $y=2-x$. The marginal density functions can be derived as follows.
+
+First, for $X$:
+
+For $x \leq 0$ and $x \geq 2$, $f_X(x)=0$.
+
+For $0 < x \leq 1$, 
+$$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dy = \int_{0}^{1} \frac{2}{3} \, dy = \frac{2}{3}.$$
+
+For $1 < x < 2$,
+$$f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dy = \int_{0}^{2-x} \frac{2}{3} \, dy = \frac{4}{3} - \frac{2}{3}x.$$
+
+We can check that this is a valid density function:
+$$\int_{-\infty}^{\infty} f_X(x) \, dx = \int_{0}^{1} \frac{2}{3} \, dx + \int_{1}^{2} (\frac{4}{3} - \frac{2}{3}x) \, dx = 1,$$
+so indeed it is.
+
+Next, the marginal density function of $Y$:
+
+For $y \leq 0$ and $y \geq 1$, $f_Y(y) = 0$.
+
+For $0 < y < 1$,
+$$f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dx = \int_{0}^{2-y} \frac{2}{3} \, dx = \frac{4}{3} - \frac{2}{3}y.$$
+
+(b)
+$$E[X] = \int_{-\infty}^{\infty} x f_X(x) \, dx = \int_{0}^{1} \frac{2}{3}x \, dx + \int_{1}^{2} (\frac{4}{3}x - \frac{2}{3}x^2) \, dx = \frac{7}{9}.$$
+
+$$E[Y] = \int_{-\infty}^{\infty} y f_Y(y) \, dy = \int_{0}^{1} (\frac{4}{3}y - \frac{2}{3}y^2) \, dy = \frac{4}{9}.$$
+
+
+\end{document}

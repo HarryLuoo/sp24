@@ -45,7 +45,8 @@ $
 #line(length:100%)
 
 = Conditioinal Probability, Law of Total Prob., Bayes' Theorem, Independence
-== Conditional prob. $
+== Conditional prob. 
+$
   P(A|B)=(|A sect B|)/(|B|) => P(A B)= P(B)P(A|B)
   $ \ (new sample space is B, total number of outcomes is $A sect B$)
 == Law of total probability: 
@@ -60,7 +61,8 @@ Given events A, B, P(A) and P(B) >0,$
  Considering the law of total prob., the generalized form, when $B_i$ are partitions, is given as: $
  P(B_i|A)=(P(A|B_i)P(B_i))/(sum_j P(A|B_j)P(B_j))
 $
-== Independence: $
+== Independence: 
+$
   P(A B)=P(A)P(B) <=> P(B|A)=P(B)
   $\
   Note: By virtue of conventions, we write $A sect B$ as $A B$ in Probability.\
@@ -102,10 +104,5 @@ P(A_(i 1) A_(i 2)A_(i 3)|B)=P(A_(i 1)|B)* P(A_(i 2)|B)* P(A_(i 3)|B)
   There are N objects of type A, and $N_A- N$ objects of type B. Pick n objects without replacement. Denote number of A objects we picked as k. Parameters are $N, N_A, n$.
   $
   P(X=k)= (binom(N_A,k)binom(N-N_A,n-k))/(binom(N,n))\ "choose k from N_A, choose n-k from N-N_A, divide by total number of ways to choose n from N"
-  $
-  
-  = Probability Analysis: Probability Density Function
-  $
-  P(X<= b)= integral_(- infinity)^(b) f(x) dif x
   $
   
