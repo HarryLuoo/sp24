@@ -1,5 +1,5 @@
 #set heading(numbering: "1.1")
-#set page(margin: (x: 1cm, y: 1cm))
+#set page(margin: (x: 4cm, y: 2cm))
 #text(font: "Cambria",size: 14pt,weight: "black")[Brief Theory of Probability: Notes from MATH 431]\ Compiled by Harry Luo
 #line(length:100%, stroke:(thickness: 2pt))
 #outline(

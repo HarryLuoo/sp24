@@ -33,9 +33,10 @@ $
   - order doesn't matter: $binom(n,k)=C_n^k=(n!)/(k!(n-k)!)$
 #line(length:100%)
 = Infinite Sample Spaces
-== discrete
-$Omega = {infinity, 1, 2, ...}$
+== discrete <sec.discreteSampleSpace>
+$ Omega = {infinity, 1, 2, ...} $
 == continuous
+
 $
 P([a',b'])=("length of" [a',b'])/("length of"[a,b])\
 "single point, or sets of points:" P({x})=P(union_(i=1)^infinity {x_i})=0 \
