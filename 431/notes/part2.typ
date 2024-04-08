@@ -1,6 +1,11 @@
 #set math.equation(numbering:"(1)")
 #set heading(numbering: "1.1")
+#pagebreak()
+
+
 = Random Variables
+#image("rvSummary.png")
+
 == Discrete random variable
 Discrete random variables are random variables that can take on a countable number of values. It comes naturally from discrete, finite or infinitly countable sample  spaces. (As briefly discussed in @sec.discreteSampleSpace)
 
@@ -54,6 +59,7 @@ P(a< X <= b) = P(X <=b) - P(X<=a) = F(b) - F(a)
 == Expectation and Variance
 === Expectation
 + Exp of discrete r.v. is defined as $ E(X) = sum_k k P(X=k) $ where the sum is taken over all possible values of X. It is the weighted average of the possible values of X, where the weights are given by the probabilities.
+Expectation is a linear operator, i.e. $ E(a X + b) = a E(X) + b $ for any constants a and b.
 
   - exp of *Bernoulli* r.v. is $ E(X) = p $ where p is the probability of success.
   
@@ -96,17 +102,105 @@ When we have a function of a random variable, we can find the expectation of tha
   We can easily find the nth moment of X by taking the nth derivative of the moment generating function with respect to t and evaluating it at t = 0. i.e. $ E(X^n) = (dif )/(dif t) M_X (t=0) $
 
 === Variance
-The variance of a random variable X is a measure of how much the values of X vary around the mean. It is defined as the expectation of the squared deviation of X from its mean. i.e. $ "Var"(X) = E(X^2) - [E(X)]^2 $
+The variance of a random variable X is a measure of how much the values of X vary around the mean. It is defined as the expectation of the squared deviation of X from its mean. i.e. $ sigma^2 = "Var"(X) = E((X - E(X))^2)
+ $
+alternatively, $ "Var"(X) = E(X^2) - (E(X))^2 $
+Variance is not a linear operator, i.e. $ "Var"(a X + b) = a^2 "Var"(X) $ for any constants a and b.
++ variance of bournoli r.v. is $ p(1-p) $
++ variance of binomial r.v. is $ n p (1-p) $
++ variance of geometric r.v. is $ (1-p)/(p^2) $
++ variance of uniform r.v. is $ (b-a)^2/12 $
 
 
-
-== continuous Distribution
+= continuous Distribution
 Based on different pdf, we have different behaviors of random variables. We call them distributions.
-=== Uniform Distribution
+== Uniform Distribution
 r.v. X has the uniform distribution on the interval [a,b] if its pdf is $ f(x) = cases(display(1/(b-a)) "for" a<=x<=b,  0 "otherwise") $
 
-=== Normal (Gaussian) Distribution
-The normal distribution is a continuous probability distribution that is symmetric and bell-shaped. It is characterized by two parameters: the mean μ and the standard deviation σ. The pdf of a normal distribution is given by the formula: $ f(x) = 1/(σ sqrt(2π)) e^(-(x-μ)^2/(2σ^2)) $
+== Normal (Gaussian) Distribution
+=== standard normal distribution
+r.v. Z has the Standard normal distribution if its pdf is $ f(z) = phi(z) = 1/sqrt(2π) e^(-z^2slash 2) $ where z is the standard normal r.v. and phi is the standard normal pdf.
+It's abbrieviated as $Z ~ N(0,1)$ where 0 is the mean and 1 is the variance.
+
+- The *cdf* of the standard normal distribution is denoted as $ Φ(z) = P(Z <= z) = integral_(-infinity)^(z) phi(z) dif z $
+  Check for table for values of $Φ(z)$
+
+=== normal distribution (generalized)
+two parameters: the mean μ and the variance $sigma^2$ . The pdf of a normal distribution is given by the formula: 
+$ f(x) = 1/(sqrt(2π sigma^2)) exp[-(x-μ)^2/(2σ^2)] $
+abbrieviated as $X ~ N(μ,σ^2)$
+
+- Linearity of normal distribution
+  
+  If $X~ N(mu, sigma^2), Y = a X + b$, then $Y ~ N(a mu + b, a^2 sigma^2)$  
+
+- *normalization of normal distribution*
+  For $X~ N(mu, sigma^2)$, we can standardize it to $Z ~ N(0,1)$ by $Z = (X - mu)/sigma$ 
+
+
+= Approximations of Binomial Distribution
+Recall: *Binomial distribution* is the distribution of the _number of successes_ of n independent Bernoulli trials. It has two parameters: the number of trials n and the probability of success p.
+
+Depending on the probability of success p and the number of trials n, the binomial distribution can be approximated by the normal distribution or the Poisson distribution.
 
 
 
+== Central limit theorem (approximation with normal distribution)
+ If n is large and p is not too close to 0 or 1, the binomial distribution can be approximated by the normal distribution. 
+
+For $S_n ~ "Bin"(n,p) space ; space E(S_n)=n p space ,  "Var" ( S_n)= sigma^2 = n p(1-p),$ 
+$ lim_(n ->infinity ) P(a <= (S_n - mu )/(sigma) <= b) = integral_(a )^(b  ) phi(x) dif x =Phi(b) - Phi(a) $
+where phi is the standard normal pdf. This is the central limit theorem, which states that the binomial random variables approaches a normal distribution when $n p (1-p) > 10$ . 
+
+=== continuity correction
+$ 
+    P(a <= S_n <= b) = P(a-0.5 <= S_n <= b+0.5)
+$ 
+where S~Bin(n,p) and a,b are integers. Useful when a,b are close, and np(1-p) is not large.
+
+=== Law of large numbers
+For $ 
+    S_n ~ "Bin"(n,p) space ; space E(S_n)=n p , E(S_n/n) = p\
+    P(|S_n/n - p| < epsilon) -> 1 "as" n -> infinity
+$ In English, this is saying that, as n is large, the frequency of success in n trials will converge to the probability of success p.
+
+
+=== Confidence interval
+In most cases, if real probability of success is unknown, we can use the Law of large number to 
+1. approximate p
+2. find confidence interval $(hat(p)-epsilon, hat(p  ) + epsilon )$  (know how accurate the approximation is.)
+ Connecting law of large number with CLT, we can proof that $ 
+     P(|hat(p) - p| < epsilon) >= 2Phi(2epsilon sqrt(n) ) - 1
+ $ 
+ where, $2Phi(2epsilon sqrt(n) ) - 1$ is the confidence level, i.e. how confident we are that the real probability is in the interval.
+
+
+ == Poisson Distribution
+ === Poisson r.v.
+ A discrete r.v. L has the Poisson distribution with parameter λ>0 if its pmf is $
+  p_L (k) = e^(-λ) λ^k/k! 
+  $ for k = 0, 1, 2, ...
+- write $L ~ "Poisson"(lambda)$ 
+
+- The mean and variance of a Poisson r.v. are both equal to λ.
+
+=== Law of rare events
+For $S_n ~ "Bin"(n, lambda/n), "where" lambda/n <1$, S_n follows the law of rare events,
+$ 
+ lim_(n  -> infinity)  P(S_n = k) = e^(-lambda) lambda^k/k!
+$ 
+The distribution Bin($n,lambda/n$ ) approaches Poisson($lambda$) distribution, where $E(S_n) = lambda$ 
+
+For a fixed n, to quantify the error in approximation, we have:
+
+
+Let X~Bin(n,p), and Y~Poisson($lambda$), where $lambda = n p$ 
+
+then for any subset $ A subset.eq {0,1,2,...,n}, k in A \ 
+|P(X = k) - P(Y = k)| <= n p ^2  
+$
+if $n p ^2 <1$, then the approximation is good, and that $ 
+    P(X =k ) approx P(Y = k)= e^(-lambda) lambda^k/k!
+$ 
+
+== Exponential Distribution
