@@ -2,9 +2,9 @@
 #show heading: text.with(size: 11pt, weight: 1000, font: "Libre Baskerville")
 #set text(11pt)
 #set page(margin: (x: 5cm, y: 3cm),numbering: "1/1", columns: 1, flipped: false)
-#set math.equation(numbering:"(1)")
+#set math.equation(numbering:"1")
 #show math.equation: set text(11pt)
-#set math.cases(gap: 0.3em)
+#set math.cases(gap: 0.2em)
 
 //Exam notecard layout:
 // #show heading: text.with(size: 9pt, weight: 900, font: "Libre Baskerville")

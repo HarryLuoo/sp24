@@ -1,4 +1,4 @@
-#set math.equation(numbering:"(1)")
+#set math.equation(numbering:"1")
 
 //useful equations and notes
 = Appendix
@@ -9,6 +9,6 @@
 + small angle approximation:
   $ 
       sin(theta) approx theta quad
-      cos(theta) approx 1-theta^2  
+      cos(theta) approx 1-theta^2/2  
   $ 
   

@@ -133,7 +133,7 @@ $
     "is a partcular solution,where"\ cases(a(Omega) = 1/(sqrt((omega_0^2-Omega^2)^2 + (2gamma Omega)^2)), delta(Omega) = arctan(2gamma Omega/(omega_0^2-Omega^2)) )
 $ 
 We can study the properties of the system by looking at the amplitude and phase of the solution.
-- Amplitude: $ a(Omega) = 1/(sqrt((omega_0^2-Omega^2)^2 + (2gamma Omega)^2)) $,
+- Amplitude: $ a_((Omega)) = 1/(sqrt((omega_0^2-Omega^2)^2 + (2gamma Omega)^2)) $,
   when $gamma << omega_0$, response strongest and amplitude largest when $omega_r = omega_0$. 
 
 #figure(
@@ -151,9 +151,10 @@ We can study the properties of the system by looking at the amplitude and phase 
 - Power obsorbed by oscillation
   
   $p = F dot(x) = m f dot(x)$
-  Avg power $ 
-      P_"avg" = 1/T integral_(0)^(T) m f dot(x) dif t = -1/2 m f_0 a(Omega) Omega sin delta(Omega)\
-      P(Omega) = gamma m f_0^2Omega^2 a^2(Omega)
+
+  Avg power of oscillation $ 
+      P_"avg" = 1/T integral_(0)^(T) m f dot(x) dif t = -1/2 m f_0 a(Omega) Omega sin delta(Omega)\ "simplifies to"
+      P_"avg" (Omega) = gamma m f_0^2Omega^2 a^2_((Omega))
   $ 
   Absorption around resonance frequency $Omega = omega_0+epsilon$ is maximum:
   $ 
@@ -162,5 +163,28 @@ We can study the properties of the system by looking at the amplitude and phase 
   
 == Oscillations DOF>1
 For a system with n DOF: $q=(q_1,q_2,...,q_n),"PE"=U(q)$
--  
+- Stable equilibrium $(diff U(q))/(diff q_i)mid(|_(q=0))  $ 
+=== Example: Oscillation with 2 mass and 3 springs
+#let EOM = $L = 1/2 m dot(x_1) +1/2 m dot(x_2) - 1/2 k x_1^2\ - 1/2 k x_2^2 - 1/2 k' (x_1-x_2)^2$
+
+#figure(
+  grid(
+    columns: 3,     // 2 means 2 auto-sized columns
+    gutter: 1mm,    // space between columns
+    image("2m3s.png",width : 75%),
+    EOM, align: left,$quad quad quad quad quad quad$,
+    ))
+EOM: $ 
+    M dot dot.double(arrow(x)) = -K arrow(x) " , where" M = mat(m,0;0,m),\ arrow(x) = mat(x_1;x_2), K = mat(k+k',-k';-k',k+k')\
+$ 
+ansatz: $arrow(x)="Re"[arrow(a)e^(i omega t) ]$ Then the EOM eq becomes solving the eigenvalue problem: $ 
+    det mat(omega^2 M - K) = 0\
+    => cases(omega_-^2=k/m, omega_+^2=(k+2k')/m) cases(arrow(x_-)= a_- mat(1;1)cos(omega_- t + delta_-), arrow(x_+)= a_+ mat(1;-1)cos(omega_+ t + delta_+))
+$ with constants $a_-,a_+,delta_-,delta_+$.
+
+=== New Coords
+$ 
+    cases(Q_1=sqrt(m/2)(x_1+x_2) , Q_2=sqrt(m/2)(x_1-x_2))\ 
+    =>L = 1/2 (dot(Q_1)^2 + dot(Q_2)^2) - 1/2 (omega_-^2 Q_1^2 + omega_+^2 Q_2^2)\ =>^("E-L") dot.double(Q_1) = -omega_-^2 Q_1, dot.double(Q_2) = -omega_+^2 Q_2
+$ Decoupled oscillators with coords $Q_1,Q_2$.
 
