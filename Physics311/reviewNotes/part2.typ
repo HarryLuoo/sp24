@@ -1,6 +1,6 @@
-#set math.equation(numbering:"(1)")
+#set math.equation(numbering:"1",)
 #import "@preview/wrap-it:0.1.0": wrap-content
-#pagebreak()
+
 = Small Oscillations
 - Motion near a point of stable equilibrium.
 == DOF= 1 (one dimension)
@@ -97,7 +97,7 @@ Recall from your ODE class...
 #line(length: 100%)
 
 
-== Forced Oscillations
+=== Forced Oscillations
 When external force (F) is applied to the system, the largrangian becomes
 $ 
     L = 1/2 m dot(x)^2 - 1/2 k x^2 + F(t)x \
@@ -160,4 +160,7 @@ We can study the properties of the system by looking at the amplitude and phase 
       P=(gamma m f_0^2)/(4(epsilon^2+gamma^2)) approx (m f_0^2)/(4gamma)
   $ 
   
-  
+== Oscillations DOF>1
+For a system with n DOF: $q=(q_1,q_2,...,q_n),"PE"=U(q)$
+-  
+

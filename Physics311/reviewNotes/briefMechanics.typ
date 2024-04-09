@@ -1,10 +1,10 @@
 #set heading(numbering: "1.1")
-#show heading: text.with(size: 11pt, weight: 900, font: "Libre Baskerville")
+#show heading: text.with(size: 11pt, weight: 1000, font: "Libre Baskerville")
 #set text(11pt)
 #set page(margin: (x: 5cm, y: 3cm),numbering: "1/1", columns: 1, flipped: false)
 #set math.equation(numbering:"(1)")
 #show math.equation: set text(11pt)
-#set math.cases(gap: 0.5em)
+#set math.cases(gap: 0.3em)
 
 //Exam notecard layout:
 // #show heading: text.with(size: 9pt, weight: 900, font: "Libre Baskerville")
@@ -17,13 +17,13 @@
 Harry Luo\ 
 work in progress...
 #line(length: 100%, stroke: (thickness: 2pt))
-#content
+#outline()
 //part1: covers lec 1 - 13, i.e. exam 1 content
-#include "part1.typ"
+//#include "part1.typ"
 
 //part2: exam 2 content
 #include "part2.typ"
 
 //Appendix
-#pagebreak()
+//#pagebreak()
 #include "apnd.typ"
