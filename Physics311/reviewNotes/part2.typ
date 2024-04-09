@@ -1,5 +1,5 @@
 #set math.equation(numbering:"(1)")
-
+#pagebreak()
 = Small Oscillations
 - Motion near a point of stable equilibrium.
 == DOF= 1 (one dimension)
@@ -29,10 +29,10 @@ m dot.double(x) = -k x \ => dot.double(x) + omega_0 ^2x = 0, "where" #rect(inset
 $
 
 by magic of ODE, EOM reduces down to: $
-#rect(inset: 8pt)[$x(t) = C_1 cos(omega_0 t) + C_2 sin(omega_0 t)$] ",where"  C_1,C_2 "are constants"
+#rect(inset: 8pt)[$x(t) = C_1 cos(omega_0 t) + C_2 sin(omega_0 t)$] \ "where"  C_1,C_2 "are constants"
 $
 by trig magic, this could also be written as $
-x(t ) = a cos (omega_0 t + phi),  " where" cases(a = sqrt(C_1^2 + C_2^2) &"amplitude of oscillation" , omega_0 &"frequency of oscillation", tan phi = C_2 slash C_1 &"phase corresponding to origin of time")
+x(t ) = a cos (omega_0 t + phi),\  " where" cases(a = sqrt(C_1^2 + C_2^2) &"amplitude of oscillation" , omega_0 &"frequency of oscillation", tan phi = C_2 slash C_1 &"phase at t=0" )
 $
 
 === energy for 1D small Oscillation
@@ -64,8 +64,8 @@ The EOM is thus a linear combination of two complex expoentials:
 $
 x(t) &= e ^(-gamma t)(C_1 e ^(i omega t) + C_2 e ^(-i omega t)) \
      &= e ^(-gamma t)(A cos(omega t) + B sin(omega t)) \
-     &&"-- said Euler,where" cases(A = C_1 + C_2, B = i(C_1 - C_2))\
+     &"-- said Euler,where" cases(A = C_1 + C_2, B = i(C_1 - C_2))\
      &= a e ^(- gamma t) cos (omega t + alpha)\
-     &&a, alpha "are constants"
+     &a, alpha "are constants"
 $
-The solution is a damped oscillation with frequency $omega$, and amplitude expoentially decaying with time
+The solution is a damped oscillation with frequency $omega$, and amplitude expoentially decaying with time.

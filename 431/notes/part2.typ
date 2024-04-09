@@ -204,3 +204,21 @@ if $n p ^2 <1$, then the approximation is good, and that $
 $ 
 
 == Exponential Distribution
+A continuous r.v. X has the exponential distribution with parameter λ>0 if its pdf is $ 
+  f(x) = cases(display(λ e^(-λ x)) "for" x>=0, 0 "otherwise")
+  $
+  Write $X ~ "Exp"(lambda)$
+  The cdf is found by integrating the pdf, $
+  F(x) = cases(display(1 - e^(-λ x)) "for" x>=0, 0 "otherwise")
+  $
+  Expectations and variance are
+  $ 
+  E(X) = 1/lambda , "Var"(X) = 1/lambda^2 
+  $ 
+- EXp distribution is memoryless, i.e. $ P(X > t+s | X > t) & = P(X> t+s, X >t)/P(X>t) \ 
+& = P(X>t+s)/P(X>t) \ 
+& = (e^(-lambda(t+s)) )/(e^(-lambda t) ) \ 
+& = e^(-lambda s) \
+& = P(X>t)
+  $ for all s,t > 0
+
