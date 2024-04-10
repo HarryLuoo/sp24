@@ -13,11 +13,11 @@
 
 
 //Exam notecard layout:
-// #show heading: text.with(size: 8pt, weight: 900, font: "Libre Baskerville")
-// #set text(7pt)
-// #set page(margin: (x: 0.4cm, y: 0.3cm), columns: 4, flipped: true)
-// #set math.equation(numbering:"(1)")
-// #show math.equation: set text(8pt)
+#show heading: text.with(size: 8pt, weight: 900, font: "Libre Baskerville")
+#set text(7pt)
+#set page(margin: (x: 0.4cm, y: 0.3cm), columns: 4, flipped: true)
+#set math.equation(numbering:"(1)")
+#show math.equation: set text(8pt)
 
 
 //part1: covers lec 1 - 13, i.e. exam 1 content

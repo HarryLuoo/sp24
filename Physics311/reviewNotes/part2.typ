@@ -11,7 +11,7 @@
   
 - Consider small deviation from point of stable equilibrium, we use taylor expansion to show that it is really a small displacement. that is,
 $
-U(q) approx U(q_0) + (dif U(q_0))/(dif q)(q-q_0) + (dif^2 U(q_0))/(2 dif q^2)(q-q_0)^2 + ...\
+U approx U(q_0) + (dif U(q_0))/(dif q)(q-q_0) + (dif^2 U(q_0))/(2 dif q^2)(q-q_0)^2\
 "while"  (dif U(q_0))/(dif q)(q-q_0) = 0
 $
 letting $x = q- q_0$, we have $
@@ -77,10 +77,9 @@ Recall from your ODE class...
 + Overdameped
  
   $ 
-  gamma > omega => x(t) = c_1e^(-gamma+sqrt(gamma^2-omega^2)t )+c_2e^(-gamma-sqrt(gamma^2-omega^2) t)  $ 
-  When 
+  gamma > omega => x(t) =\ c_1e^(-gamma+sqrt(gamma^2-omega^2)t )+c_2e^(-gamma-sqrt(gamma^2-omega^2) t)  $ 
   $
-  gamma >> omega_0, => display(cases(gamma+sqrt(gamma^2-omega_0^2) approx 2gamma, gamma - sqrt(gamma^2-omega^2)=(omega^2)/(2gamma)))\
+  "when"gamma >> omega_0, => display(cases(gamma+sqrt(gamma^2-omega_0^2) approx 2gamma, gamma - sqrt(gamma^2-omega^2)=(omega^2)/(2gamma)))\
   x(t) = c_1 e^(-2gamma t)+ c_2e^((-omega_0^2slash 2gamma)t) 
   $ 
   
@@ -191,7 +190,7 @@ $ Decoupled oscillators with coords $Q_1,Q_2$.
 === General Coords
 for general coords $q_i$, let $x_i = q_i-q_i^((0))$ 
 $ 
-    U(q)=1/2 sum_(i,j)k_(i j)x_i x_j, quad k_(i j) = k_(j i)= (diff ^2U(q))/(diff q_i partial q_j)  "symmetric matrix"\    
+    U=1/2 sum_(i,j)k_(i j)x_i x_j,quad k_(i j) = k_(j i)= (diff ^2U(q))/(diff q_i partial q_j)  "symm mat"\    
     T = 1/2 sum_(i,j)m_(i j)dot(x_i)dot(x_j), quad m_(i j) = m_(j i) = a_(i j) (q^((0)))\  
 $ 
 the largrangian, in Matix form:
@@ -202,17 +201,17 @@ plug in Evalue into @eq.Oscillation.matrix for eigenvec(normal modes) $arrow(a^a
 - General motion $ 
     x_i (t) = sum_(alpha)a^alpha_i"Re"[C_alpha e^(i omega_alpha t) ]   
 $ 
-- EXAMPLE: Normal freq is given $ omega={0,sqrt(2)omega_0,sqrt(3) omega_0 }.\ omega=sqrt(2)omega_0 => a_1=-a_3=-a_2 = a e^(i delta) => arrow(theta)= a mat(1,-1,-1)^T cos(sqrt(2) omega_0 t + delta)\  
-  omega=sqrt(3 omega_0) => a_1=0, a_2=-a_3 = a e^(i delta) => arrow(theta)= a mat(0,1,-1)^T cos(sqrt(3) omega_0 t + delta)\ 
+- EXAMPLE: Normal freq is given $ omega={0,sqrt(2)omega_0,sqrt(3) omega_0 }.\ omega=sqrt(2)omega_0 => a_1=-a_3=-a_2 = a e^(i delta) =>\ arrow(theta)= a mat(1,-1,-1)^T cos(sqrt(2) omega_0 t + delta)\  
+  omega=sqrt(3 omega_0) => a_1=0, a_2=-a_3 = a e^(i delta) =>\ arrow(theta)= a mat(0,1,-1)^T cos(sqrt(3) omega_0 t + delta)\ 
   $ 
 
 - EXAMPLE: double pendulum
   $ 
-      cases(x_1 = l_1 sin phi_1 quad y_1 = -l_1 cos phi_1, x_2 = l_1 sin phi_1 + l_2 sin phi_2 quad y_2 = l_1 cos phi_1 + l_2 cos phi_2)\ 
-      =>T = 1/2 m_1 l_1 dot(phi)^2+1/2m_2(l_1^2 dot(phi_1)^2 + l_2^2 dot(phi_2)^2 + 2l_1 l_2 dot(phi_1)dot(phi_2)cos(phi_1-phi_2))\
+      cases(x_1 = l_1 sin phi_1 quad y_1 = -l_1 cos phi_1, x_2 = l_1 sin phi_1 + l_2 sin phi_2 quad y_2 = l_1 cos phi_1 + l_2 cos phi_2) $$ 
+=>T = 1/2 m_1 l_1 dot(phi)^2+1/2m_2(l_1^2 dot(phi_1)^2 + l_2^2 dot(phi_2)^2 \ + 2l_1 l_2 dot(phi_1)dot(phi_2)cos(phi_1-phi_2))\
       U = -m_1 g l_1 cos phi_1 - m_2 g(l_1 cos phi_1 + l_2 cos phi_2)\
   $ using $cos phi approx 1-phi^2/2$
-  $L = 1/2 mat(dot(phi_1), dot(phi_2)) mat((m_1+m_2)l_1^2, m_2l_1l_2; m_2l_1l_2, m_2l_2^2) mat(dot(phi_1), dot(phi_2))\ quad- 1/2 mat(phi_1, phi_2) mat((m_1+m_2)l_1g,0;0,m_2g l_2) mat(phi_1, phi_2)\ = 1/2 dot(arrow(phi))^T M dot dot(arrow(phi)) - 1/2 arrow(phi)^T K arrow(phi)\
+  $ L = 1/2 mat(dot(phi_1), dot(phi_2)) mat((m_1+m_2)l_1^2, m_2l_1l_2; m_2l_1l_2, m_2l_2^2) mat(dot(phi_1), dot(phi_2))\ quad- 1/2 mat(phi_1, phi_2) mat((m_1+m_2)l_1g,0;0,m_2g l_2) mat(phi_1, phi_2)\ = 1/2 dot(arrow(phi))^T M dot dot(arrow(phi)) - 1/2 arrow(phi)^T K arrow(phi)\
 $
 
   When $m_1=m_2=m, quad l_1=l_2=l => quad 
@@ -221,7 +220,71 @@ $
           mat(a_1^-;a_2^-) = C_-mat(1;sqrt(2) ), quad mat(a_1^+;a_2^+) = C_+mat(1;-sqrt(2) )\
       $ 
        
-=== Normal Coords
-${x_i} = {Q_alpha}, "where" x_i = sum_(alpha=1)^(n)A_(i alpha) Q_alpha => sum_(j)(omega_alpha^2 m_(i j) - k_(i j) A_(j x))=0 \ => L = 1/2 sum_(alpha=1)^(n)(dot(Q^2)_alpha - omega_alpha^2 Q_alpha^2)   ==>^"EL" dot.double(Q_alpha)+omega_alpha^2Q_alpha  $ 
+== Normal Coords
+${x_i} = {Q_alpha}, "where" x_i = sum_(alpha=1)^(n)A_(i alpha) Q_alpha => \ sum_(j)(omega_alpha^2 m_(i j) - k_(i j) A_(j x))=0 \ => L = 1/2 sum_(alpha=1)^(n)(dot(Q^2)_alpha - omega_alpha^2 Q_alpha^2)   ==>^"EL" dot.double(Q_alpha)+omega_alpha^2Q_alpha =0  $ 
 
 = Motion of Rigid Body
+- EXample: rotor
+rotation with constraint $abs(arrow(r_i)-arrow(r_j))$ .COM coords are useful here $
+cases(arrow(r)=arrow(r_1)-arrow(r_2),arrow(R)=(m_1 arrow(r_1)+ m_2 arrow(r_2))/(m_1+m_2))=>cases(arrow(r_1)=arrow(R)+ m_2arrow(r)slash M , arrow(r_2)=arrow(R)- m_1arrow(r)slash M) $ $ 
+     L = 1/2 M dot(arrow(R))^2 + mu dot(arrow(r))^2, quad mu = m_1 m_2/(m_1+m_2) \ ==>^"polar" L = 1/2 M dot(arrow(R))^2+ 1/2 mu a^2 (dot(theta)^2 +  dot(phi)^2 sin ^2 theta) 
+$ 
+
+== frames of reference
+
+#figure(
+    grid(
+        columns: 2,     // 2 means 2 auto-sized columns
+        gutter: 2mm,    // space between columns
+        image("RigidFrame.png",width: 50%),
+        ($(X Y Z)==>^(R(theta,phi,psi))(x_1,x_2,x_3)$
+    )))
+Velocity of pt in body: $arrow(v) = arrow(V) + arrow(Omega) times arrow(r)$, where V is Translational vel, Omega is angular vel, r is position vector.
+
+== Largrangian for Rigid Body
+$ 
+T = 1/2 M V^2 + 1/2 sum_(a) m_a [Omega^2 r_a^2 - (arrow(Omega) ) arrow(r_a))^2)] \ T"translational" +T"rotational"
+$ 
+consider rotation, $ Omega^2 = sum_(i) Omega_i^2, quad arrow(Omega) dot arrow(r_a) = sum_(i) Omega_i x_(a,i)\ => T_("rot") = 1/2 sum_("i,j") Omega_i Omega_j I_("i,j"). quad I_(i j) equiv sum_(a)m_a(delta_(i j)r_a^2 - x_(a,i)x_(a,j)) $
+$=> L = 1/2 M V^2 + 1/2 sum_(i,j)I_(i,j)Omega_i Omega_j -U$  
+=== Inertial Tensor
+- Discrete
+$ 
+    I = mat(sum m(y^2+z^2), -sum m x y, -sum m x z; -sum m x y, sum m(x^2+z^2), -sum m y z; -sum m x z, -sum m y z, sum m(x^2+y^2)))
+$ 
+- Continuous
+$ 
+    I_(i j) = integral rho(x) (delta_(i j) r^2 - x_i x_j) dif V\
+    I_(x x)= integral rho(x) (y^2+z^2) dif V, I_(x y) = I_(y x) = -integral rho(x) x y dif V\
+    I_(y y)= integral rho(x) (x^2+z^2) dif V, I_(y z) = I_(z y) = -integral rho(x) y z dif V\
+    I_(z z)= integral rho(x) (x^2+y^2) dif V, I_(z x) = I_(x z) = -integral rho(x) z x dif V\
+$ 
+== Principle axis and principal moments of inertia
+In the principal frame: $ T_"rot" = 1/2 (I_1 Omega_1^2 + I_2 Omega_2^2 + I_3 Omega_3^2) $ 
+- spherical top $I_1=I_2=I_3$
+- Symmetric top $I_1=I_2 eq.not I_3$
+- Asymmetric top $I_1 eq.not I_2 eq.not I_3$\
+- EXample: $ 
+    det mat(I - lambda bold(1)) = 0 => lambda "prncp. mom."\ arrow(v)="eigenvec.= prncp. axis"\  
+$ 
+
+== Parallel axis theorem
+when changing Origin diff. from COM(O),
+
+#figure(
+    grid(
+        columns: 2,     // 2 means 2 auto-sized columns
+        gutter: 2mm,    // space between columns
+        image("parallelAxis.png",width : 50%),
+        $I_(i j) =\ I'_(i j) - M(a^2 delta_(i j) - a_i a_j)$ 
+, 
+    ))
+For a cube, when finding I at corner, first find I at COM, and 
+$ 
+    I'_(x x) = I_(x x) + M(b^2 +c^2) = 4/3 M(b^2)+c^2\
+    I'_(y y) = I_(y y) + M(a^2 + c^2) = 4/3 M (a^2 + c^2)  \
+    I'_(z z) = I_(z z) + M(a^2 + b^2)= 4/3 M(a^2 + b^2) \
+
+
+$ 
+
