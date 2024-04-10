@@ -11,7 +11,7 @@
   
 - Consider small deviation from point of stable equilibrium, we use taylor expansion to show that it is really a small displacement. that is,
 $
-U(q) approx U(q_0) + (dif U(q_0))/(dif q)(q-q_0) + (1/2)(dif^2 U(q_0))/(dif q^2)(q-q_0)^2 + ...\
+U(q) approx U(q_0) + (dif U(q_0))/(dif q)(q-q_0) + (dif^2 U(q_0))/(2 dif q^2)(q-q_0)^2 + ...\
 "while"  (dif U(q_0))/(dif q)(q-q_0) = 0
 $
 letting $x = q- q_0$, we have $
@@ -20,7 +20,7 @@ cases(U(x) = U(q_0) + (1/2)(dif^2 U(q_0))/(dif q^2)x^2,
 => #rect(inset: 8pt)[ $ display(k = (dif^2 U(q_0))/(dif q^2) > 0 )$ ]  
 $
 we get KE, while choosing $U(q_0) = 0$:\
- $ T = 1/2 a(q)^2 dot(q)^2 = 1/2 a(q_0+x)dot(x)^2 approx 1/2 m dot(x)^2 , "letting" m = a(q_0) \ =>
+ $ T = 1/2 a(q)^2 dot(q)^2 = 1/2 a(q_0+x)dot(x)^2 approx 1/2 m dot(x)^2 ,  =>^(m = a(q_0))\
 #rect(inset: 8pt)[ $ display(L = T - U = 1/2 m dot(x)^2 - 1/2 k x^2 )$ ]  $ <eq.1DSO.largrangian>
 
 === EOM for DOF = 1 small Oscillations
@@ -43,7 +43,7 @@ E = T + U &= 1/2 m dot(x)^2 + 1/2 k x^2\ & = 1/2 m a^2 omega_0^2  , [ " constant
 $
 
 === Damped 1D oscillation, and Complex representation
-[_I dont like the how the subscripts are used in this lecture but I guess this is what we are stuck with._]\
+
 
 - when there is damping (friction, resistence, etc) $F_"fric" = - beta dot(x)$, the EOM becomes:$ 
 dot.double(x) + 2 gamma dot(x) + omega_0^2 x = 0,\ "where" 2 gamma = beta/m , omega_0 = sqrt(k/m) $ <eq.1DSO.damped>
@@ -60,7 +60,7 @@ Recall from your ODE class...
 @eq.1DSO.sol has the following 3 cases, each with different physical interpretation:
 
 + underdamped: 
-  $ gamma < omega_0 => "2 complex roots:  " cases( r_(plus.minus) = - gamma plus.minus i sqrt(omega_0^2 - gamma ^2) = - gamma plus.minus i omega, omega = sqrt(omega_0^2 - gamma^2) ) $
+  $ gamma < omega_0 => "2 complex roots:  " cases( r_(plus.minus) = - gamma plus.minus i sqrt(omega_0^2 - gamma ^2)\ = - gamma plus.minus i omega, omega = sqrt(omega_0^2 - gamma^2) ) $
   
   The EOM is thus a linear combination of two complex expoentials:
   $
@@ -91,8 +91,8 @@ Recall from your ODE class...
     grid(
         columns: 2,     // 2 means 2 auto-sized columns
         gutter: 2mm,    // space between columns
-        image("damped.png",width: 70%),
-        image("overdamped.png",width: 80%),
+        image("damped.png",width: 60%),
+        image("overdamped.png",width: 60%),
     ))
 #line(length: 100%)
 
@@ -110,7 +110,7 @@ $ <eq.forced>
     grid(
         columns: 2,     // 2 means 2 auto-sized columns
         gutter: 2mm,    // space between columns
-        image("pivotPendulum.png",width: 70%),
+        image("pivotPendulum.png",width: 50%),
         $ 
       cases(x = X+l sin phi,
       y = l cos phi)
@@ -140,8 +140,8 @@ We can study the properties of the system by looking at the amplitude and phase 
     grid(
         columns: 2,     // 2 means 2 auto-sized columns
         gutter: 2mm,    // space between columns
-        image("response.png",width : 70%),
-        image("phaseLag.png",width: 70%),
+        image("response.png",width : 50%),
+        image("phaseLag.png",width: 50%),
     ))
 - Phase lag: $tan delta(Omega) = 2gamma Omega/(Omega^2-omega_0^2)$ 
   
@@ -171,7 +171,7 @@ For a system with n DOF: $q=(q_1,q_2,...,q_n),"PE"=U(q)$
   grid(
     columns: 3,     // 2 means 2 auto-sized columns
     gutter: 1mm,    // space between columns
-    image("2m3s.png",width : 75%),
+    image("2m3s.png",width : 50%),
     EOM, align: left,$quad quad quad quad quad quad$,
     ))
 EOM: $ 
@@ -188,3 +188,40 @@ $
     =>L = 1/2 (dot(Q_1)^2 + dot(Q_2)^2) - 1/2 (omega_-^2 Q_1^2 + omega_+^2 Q_2^2)\ =>^("E-L") dot.double(Q_1) = -omega_-^2 Q_1, dot.double(Q_2) = -omega_+^2 Q_2
 $ Decoupled oscillators with coords $Q_1,Q_2$.
 
+=== General Coords
+for general coords $q_i$, let $x_i = q_i-q_i^((0))$ 
+$ 
+    U(q)=1/2 sum_(i,j)k_(i j)x_i x_j, quad k_(i j) = k_(j i)= (diff ^2U(q))/(diff q_i partial q_j)  "symmetric matrix"\    
+    T = 1/2 sum_(i,j)m_(i j)dot(x_i)dot(x_j), quad m_(i j) = m_(j i) = a_(i j) (q^((0)))\  
+$ 
+the largrangian, in Matix form:
+$ 
+    L = 1/2 dot(arrow(x))^T dot M dot dot(arrow(x)) - 1/2 arrow(x)^T dot K arrow(x) ==>^("EL") (omega^2M-K)dot arrow(a) = 0 $ <eq.Oscillation.matrix>
+$ =>det (omega^2M -K)=0$ Solving the det for omega gives the normal freq (Eigenvalues)of system $omega_alpha^2$ . 
+plug in Evalue into @eq.Oscillation.matrix for eigenvec(normal modes) $arrow(a^alpha)$ of system.
+- General motion $ 
+    x_i (t) = sum_(alpha)a^alpha_i"Re"[C_alpha e^(i omega_alpha t) ]   
+$ 
+- EXAMPLE: Normal freq is given $ omega={0,sqrt(2)omega_0,sqrt(3) omega_0 }.\ omega=sqrt(2)omega_0 => a_1=-a_3=-a_2 = a e^(i delta) => arrow(theta)= a mat(1,-1,-1)^T cos(sqrt(2) omega_0 t + delta)\  
+  omega=sqrt(3 omega_0) => a_1=0, a_2=-a_3 = a e^(i delta) => arrow(theta)= a mat(0,1,-1)^T cos(sqrt(3) omega_0 t + delta)\ 
+  $ 
+
+- EXAMPLE: double pendulum
+  $ 
+      cases(x_1 = l_1 sin phi_1 quad y_1 = -l_1 cos phi_1, x_2 = l_1 sin phi_1 + l_2 sin phi_2 quad y_2 = l_1 cos phi_1 + l_2 cos phi_2)\ 
+      =>T = 1/2 m_1 l_1 dot(phi)^2+1/2m_2(l_1^2 dot(phi_1)^2 + l_2^2 dot(phi_2)^2 + 2l_1 l_2 dot(phi_1)dot(phi_2)cos(phi_1-phi_2))\
+      U = -m_1 g l_1 cos phi_1 - m_2 g(l_1 cos phi_1 + l_2 cos phi_2)\
+  $ using $cos phi approx 1-phi^2/2$
+  $L = 1/2 mat(dot(phi_1), dot(phi_2)) mat((m_1+m_2)l_1^2, m_2l_1l_2; m_2l_1l_2, m_2l_2^2) mat(dot(phi_1), dot(phi_2))\ quad- 1/2 mat(phi_1, phi_2) mat((m_1+m_2)l_1g,0;0,m_2g l_2) mat(phi_1, phi_2)\ = 1/2 dot(arrow(phi))^T M dot dot(arrow(phi)) - 1/2 arrow(phi)^T K arrow(phi)\
+$
+
+  When $m_1=m_2=m, quad l_1=l_2=l => quad 
+      M=m l^2 mat(2,1;1,1), K=m g l mat(2,0;0,1)$ $ 
+          det mat((omega^2M-K)) = 0 => omega^2 = (2 plus.minus sqrt(2)omega_0^2 )\
+          mat(a_1^-;a_2^-) = C_-mat(1;sqrt(2) ), quad mat(a_1^+;a_2^+) = C_+mat(1;-sqrt(2) )\
+      $ 
+       
+=== Normal Coords
+${x_i} = {Q_alpha}, "where" x_i = sum_(alpha=1)^(n)A_(i alpha) Q_alpha => sum_(j)(omega_alpha^2 m_(i j) - k_(i j) A_(j x))=0 \ => L = 1/2 sum_(alpha=1)^(n)(dot(Q^2)_alpha - omega_alpha^2 Q_alpha^2)   ==>^"EL" dot.double(Q_alpha)+omega_alpha^2Q_alpha  $ 
+
+= Motion of Rigid Body
