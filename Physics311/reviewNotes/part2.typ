@@ -259,6 +259,11 @@ $
     I_(y y)= integral rho(x) (x^2+z^2) dif V, I_(y z) = I_(z y) = -integral rho(x) y z dif V\
     I_(z z)= integral rho(x) (x^2+y^2) dif V, I_(z x) = I_(x z) = -integral rho(x) z x dif V\
 $ 
+example: #image("ex.inertia1.png", width: 70%)
+
+- Example: coplanar system
+  principal axis: Z $=> I_(13) = I_(23) =0$ \
+  $I_3 = I_1+I_2$ 
 == Principle axis and principal moments of inertia
 In the principal frame: $ T_"rot" = 1/2 (I_1 Omega_1^2 + I_2 Omega_2^2 + I_3 Omega_3^2) $ 
 - spherical top $I_1=I_2=I_3$
@@ -267,6 +272,17 @@ In the principal frame: $ T_"rot" = 1/2 (I_1 Omega_1^2 + I_2 Omega_2^2 + I_3 Ome
 - EXample: $ 
     det mat(I - lambda bold(1)) = 0 => lambda "prncp. mom."\ arrow(v)="eigenvec.= prncp. axis"\  
 $ 
+
+- EXample: continuous with axis of symmetry
+  $rho(arrow(r))=rho=(r,x_3)=> I_(i j) = integral rho(arrow(r))(r^2 delta - x_i x_j)  dif V $
+  #figure(
+    grid(
+        columns: 2,     // 2 means 2 auto-sized columns
+        gutter: 2mm,    // space between columns
+        image("ex.symm1.png",width : 110%),
+        image("ex.symm2.png",width: 110%),
+    ))
+#image("ex.symm3.png", width: 100%)
 
 == Parallel axis theorem
 when changing Origin diff. from COM(O),
