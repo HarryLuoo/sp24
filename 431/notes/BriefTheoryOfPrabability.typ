@@ -9,7 +9,7 @@
 #pagebreak()
 
 //part1: exam1 contents
-#include "part1.typ"
+//#include "part1.typ"
 
 // part 2: exam 2 contents
 #include "part2.typ"

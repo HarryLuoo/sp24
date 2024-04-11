@@ -204,6 +204,8 @@ if $n p ^2 <1$, then the approximation is good, and that $
 $ 
 
 == Exponential Distribution
+
+No mentioning where it comes from, but will be told when "can be modeled by exponential distribution"
 A continuous r.v. X has the exponential distribution with parameter λ>0 if its pdf is $ 
   f(x) = cases(display(λ e^(-λ x)) "for" x>=0, 0 "otherwise")
   $
@@ -222,3 +224,44 @@ A continuous r.v. X has the exponential distribution with parameter λ>0 if its 
 & = P(X>t)
   $ for all s,t > 0
 
+= Joint Distribution
+== discrete joint distribution
+- definition: $ 
+    p(k_1, k_2,k_3) = P(X_1 = k_1, X_2 = k_2, X_3 = k_3) 
+$ for r.v. $X_1 = k_1, X_2=k_2, X_3=k_3$
+
+- expectation: 
+  $ 
+    E(g(X_1, X_2, X_3)) = sum_(k_1) sum_(k_2) sum_(k_3) g(k_1, k_2, k_3) p(k_1, k_2, k_3) $
+- marginal distribution:
+  $ 
+    p_1(k) = sum_(k_2) sum_(k_3) p(k, k_2, k_3) 
+  $ 
+- Multinomial distribution
+  when looking for the probability of some independent events together, we can use the multinomial distribution.
+  $ 
+    P(X_1 = k_1, X_2 = k_2, X_3 = k_3) = n!/(k_1 ! k_2 ! k_3 !) p_1^(k_1) p_2^(k_2) p_3^(k_3) 
+  $ 
+  abbreviate this as $(X_1,X_2,...,X_r) ~ "Multi"(n,r,p_1,p_2,...,p_r)$
+== Continuous joint distribution
+- definition: $ 
+    P((X_1,X_2,X_3) in A) = integral_(A) f(x_1, x_2, x_3) dif x_1 dif x_2 dif x_3
+    $ for r.v. $X_1, X_2, X_3$ and set $A in Re$
+- expectation: $
+  E(g(X_1, X_2, X_3)) = integral_(-infinity)^(infinity)integral_(-infinity)^(infinity)integral_(-infinity)^(infinity) g(x_1, x_2, x_3) f(x_1, x_2, x_3) dif x_1 dif x_2 dif x_3
+  $
+- marginal distribution: $
+  f_1(x) = integral_(-infinity)^(infinity)integral_(-infinity)^(infinity) f(x, y, z) dif y dif z
+  $
+
+== Independent joint random variables
+- Necessary and sufficient Condition: 
+  - discrete $ 
+    p(x_1, x_2) = p_1(x_1) p_2(x_2) 
+  $ 
+  - Continuous $ 
+    f(x_1, x_2) = f_1(x_1) f_2(x_2) 
+  $
+- If two r.v. depend on different parameters, they are independent. i.e. $ 
+    Y=f(X_1,X_2,X_3); quad Z=g(X_(4),X_(5),X_6)\ => Y "and" Z "are independent"
+$ 

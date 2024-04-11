@@ -275,14 +275,6 @@ $
 
 - EXample: continuous with axis of symmetry
   $rho(arrow(r))=rho=(r,x_3)=> I_(i j) = integral rho(arrow(r))(r^2 delta - x_i x_j)  dif V $
-  #figure(
-    grid(
-        columns: 2,     // 2 means 2 auto-sized columns
-        gutter: 2mm,    // space between columns
-        image("ex.symm1.png",width : 110%),
-        image("ex.symm2.png",width: 110%),
-    ))
-#image("ex.symm3.png", width: 100%)
 
 == Parallel axis theorem
 when changing Origin diff. from COM(O),
@@ -300,7 +292,9 @@ $
     I'_(x x) = I_(x x) + M(b^2 +c^2) = 4/3 M(b^2)+c^2\
     I'_(y y) = I_(y y) + M(a^2 + c^2) = 4/3 M (a^2 + c^2)  \
     I'_(z z) = I_(z z) + M(a^2 + b^2)= 4/3 M(a^2 + b^2) \
-
-
 $ 
 
+
+        #image("ex.symm1.png",width : 110%)
+        #image("ex.symm2.png",width: 110%)
+#image("ex.symm3.png", width: 100%)
