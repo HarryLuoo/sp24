@@ -212,6 +212,9 @@ A continuous r.v. X has the exponential distribution with parameter λ>0 if its 
   The cdf is found by integrating the pdf, $
   F(x) = cases(display(1 - e^(-λ x)) "for" x>=0, 0 "otherwise")
   $
+  Notice the tail probability, $
+  P(X>t) = e^(-lambda t) 
+  $ 
   Expectations and variance are
   $ 
   E(X) = 1/lambda , "Var"(X) = 1/lambda^2 
