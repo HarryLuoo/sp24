@@ -57,7 +57,7 @@ P(a< X <= b) = P(X <=b) - P(X<=a) = F(b) - F(a)
 
 == Expectation and Variance
 === Expectation
-+ Exp of discrete r.v. is defined as $ E(X) = sum_k k P(X=k) $ where the sum is taken over all possible values of X. It is the weighted average of the possible values of X, where the weights are given by the probabilities.
++ Exp of discrete r.v. is defined as $ E(X) = sum_k k P(X=k) $ where the sum is taken over all possible values of X. It is the weighted average of the possible values of X, where the weights are given by the possible values.
 Expectation is a linear operator, i.e. $ E(a X + b) = a E(X) + b $ for any constants a and b.
 
   - exp of *Bernoulli* r.v. is $ E(X) = p $ where p is the probability of success.
@@ -98,7 +98,7 @@ When we have a function of a random variable, we can find the expectation of tha
   M_X (t) = E(e^(t X)) = integral_(-infinity)^(infinity) e^(t x) f(x) dif x
   $ It is a function of t.
   
-  We can easily find the nth moment of X by taking the nth derivative of the moment generating function with respect to t and evaluating it at t = 0. i.e. $ E(X^n) = (dif )/(dif t) M_X (t=0) $
+  We can easily find the nth moment of X by taking the nth derivative of the moment generating function with respect to t and evaluating it at t = 0. i.e. $ E(X^n) = (dif ^n )/(dif t) M_X (t=0) $
 
 === Variance
 The variance of a random variable X is a measure of how much the values of X vary around the mean. It is defined as the expectation of the squared deviation of X from its mean. i.e. $ sigma^2 = "Var"(X) = E((X - E(X))^2)
