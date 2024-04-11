@@ -1,13 +1,12 @@
 #set math.equation(numbering:"(1)")
 #set heading(numbering: "1.1")
-#pagebreak()
 
 
 = Random Variables
 #image("rvSummary.png")
 
 == Discrete random variable
-Discrete random variables are random variables that can take on a countable number of values. It comes naturally from discrete, finite or infinitly countable sample  spaces. (As briefly discussed in @sec.discreteSampleSpace)
+Discrete random variables are random variables that can take on a countable number of values. It comes naturally from discrete, finite or infinitly countable sample  spaces. (As briefly discussed in sec.discreteSampleSpace)
 
  For $A = {k_1,k_2,...,} $ s.t. random variable$X in A$, or $P(X in A) = 1$, X is a random variable, with possible values $k_1,k_2,...$ and $P(X=k_n)>0$
 === Probability Mass Function (pmf)
