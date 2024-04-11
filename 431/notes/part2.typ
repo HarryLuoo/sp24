@@ -220,7 +220,7 @@ A continuous r.v. X has the exponential distribution with parameter λ>0 if its 
 & = P(X>t+s)/P(X>t) \ 
 & = (e^(-lambda(t+s)) )/(e^(-lambda t) ) \ 
 & = e^(-lambda s) \
-& = P(X>t)
+& = P(X>s)
   $ for all s,t > 0
 
 = Joint Distribution
