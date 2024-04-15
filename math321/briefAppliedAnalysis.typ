@@ -112,25 +112,67 @@ $
      integral.double_(S) f(x,y) dif A = integral.double_(D) f(x(u,v),y(u,v)) |J(u,v)| dif u dif v
 $ 
 
-  == Gradient, Divergence, Curl
+  == Gradient
 - Nabla operation: $ 
     nabla = (partial)/(partial x)  + (partial)/(partial y)  + (partial)/(partial z) $
 
-- Gradient in 2D cartisian $(r,theta)$ : $ 
-    nabla f = (partial f)/(partial r) i + (1/r)(partial f)/(partial theta) j
-
+- Gradient in cartesian Scalar field $f = f(x,y,z)$  $ 
+    nabla f = ( (diff f)/(diff x) , (diff f)/(diff y) , (diff f)/(diff z) ) 
+$ 
+- Gradient in polar coordinates $f = f(r,theta)$ $ 
+    nabla f = arrow(e_r) (diff g)/(diff r) +arrow(e_theta) 1/r (diff g)/(diff theta)\
+    "where" arrow(e_r) = (x)/(norm(x)) = (cos theta, sin theta)  arrow(e_theta) = (-sin theta, cos theta)\
+    nabla = arrow(e_r) partial_r + arrow(e_theta) 1/r partial_theta 
     $
-- Gradient in polar $ 
-    nabla f = (partial f)/(partial rho) i + (1/rho)(partial f)/(partial phi) j 
+- Gradient in spherical$ 
+    nabla f = hat(rho) partial_rho + hat(phi) 1/rho partial_phi + hat(theta) 1/(rho sin phi) partial_theta 
+$ 
+- Gradient of scalar field in spherical coordinates $ 
+#image("scalar_field_spherical.png")
+     
 $ 
 
-- Gradient in spherical $ 
-    nabla f = partial_rho hat(rho) + hat(phi) 1/rho partial_phi + hat(theta) 1/(rho sin phi) partial_theta 
-    $
+== Divergence
+- div of vec field: 
+3D: $ 
+      nabla dot arrow(F) = (diff F_1)/(diff x ) + (diff F_2)/(diff y) + (diff F_3)/(diff z)
+  $
+  
+
+- Div in polar 2D 
+$ 
+    arrow(U) = U_r hat(r) + U_theta hat(theta), "where" U_r = U dot hat(r), U_theta = U dot hat(theta)\
+    nabla dot U = (1/r) (partial (r U_r))/(partial r) + (partial U_theta)/(partial theta) 
+$ 
+
+- Div in sphereical coord
+ $ 
+     arrow(U)=U_rho hat(rho) + U_theta hat(theta) + U_phi hat(phi),
+\ nabla dot arrow(U) = 1/rho^2 (partial (rho^2 U_rho))/(partial rho) + 1/(rho) sin phi (partial (U_theta))/(partial theta) + 1/(rho sin phi) (partial (U_theta sin phi))/(partial phi)) 
+$ 
 
 
   == Green's theorem
 
+$ 
+    integral_(C) P d x + Q d y = integral.double_(D) (partial Q)/(partial x) - (partial P)/(partial y) d A=integral.double_(C) arrow(F) dot dif arrow(r)
+$ 
 
 
   == Stokes' theorem
+
+ - for a surface, $ arrow(r)(u,v) = (x(u,v), y(u,v), z(u,v))\ => integral.double_(S) arrow(F) dot  dif arrow(S) = integral.double_(S) arrow(F) dot arrow(n)  dif S = integral.double_(D) arrow(F)(arrow(r)(u,v)) dot (arrow(r_u) times arrow(r_v))  dif A 
+  
+  $ 
+  
+- if the surface is a graph of a fucntion $z=g(x,y), (x,y) in D, arrow(F) = (P,Q,R)$,
+  then $ 
+      integral_(S) arrow(F) dot dif arrow(s) = integral.double_(D) (P,Q,R) dot (-partial_x g, -partial_y g, 1)  dif A   
+  $ 
+   
+
+
+  Let $F: R^3 -> R^3$ be a vector field on $R^3$ , then $ 
+      integral_(C) arrow(F) dot dif arrow(r) = integral.double_(S) "curl"(arrow(F)) dif arrow(s),\ "where" "curl"(arrow(F)) = nabla times arrow(F)  
+  $ 
+    
