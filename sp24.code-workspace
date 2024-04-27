@@ -10,6 +10,47 @@
 	"settings": {
 		"cSpell.enableFiletypes": [
 			"typst"
+		],
+		"saveEditorLayout.list": [
+			{
+				"name": "homework",
+				"documents": [
+					{
+						"fsPath": "c:\\Users\\26790\\AppData\\Roaming\\Code\\User\\hsnips\\typst.hsnips",
+						"column": 3,
+						"pinned": false
+					},
+					{
+						"fsPath": "c:\\Users\\26790\\AppData\\Roaming\\Code\\User\\snippets\\typst.json",
+						"column": 3,
+						"pinned": false
+					},
+					{
+						"fsPath": "c:\\Users\\26790\\Documents\\1classes\\24sp\\HWnotes\\431\\hw\\1\\hw8.typ",
+						"column": 3,
+						"pinned": false
+					}
+				],
+				"layout": {
+					"orientation": 0,
+					"groups": [
+						{
+							"size": 701
+						},
+						{
+							"size": 701,
+							"groups": [
+								{
+									"size": 505
+								},
+								{
+									"size": 505
+								}
+							]
+						}
+					]
+				}
+			}
 		]
 	}
 }

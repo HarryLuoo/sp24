@@ -1,13 +1,13 @@
-#set heading(numbering: "1.a")
+#set heading(numbering: "I.1")
 #set page(margin: (x: 3cm, y: 1cm))
 #set text(12pt)
 #show math.equation: set text(13pt)
-#text(font: "Cambria",size: 14pt,weight: "black")[Brief Theory of Probability, Part 1\
-Survey of main ideas and equations]
-
+#text(font: "Cambria",size: 14pt,weight: "black")[Awesome applied analysis\
+Notes on MATH 321]
+Harry Luo
 
 #line(length:100%, stroke:(thickness: 2pt))
-#outline()
+#outline(indent: auto,)
 = Vector algebra
 == Coordinate Transformation
 === cylindical
@@ -175,4 +175,56 @@ $
   Let $F: R^3 -> R^3$ be a vector field on $R^3$ , then $ 
       integral_(C) arrow(F) dot dif arrow(r) = integral.double_(S) "curl"(arrow(F)) dif arrow(s),\ "where" "curl"(arrow(F)) = nabla times arrow(F)  
   $ 
-    
+
+
+#line(length: 100%)
+= Complex analysis
+== Complex numbers and basic operations
+=== Definitions
+  - Def: $i^2 = -1$
+  - Complex number: $z = x + i y$
+  - Conjugate: $z = x - i y$
+  - Real part: $Re(z) = x$, Imaginary part: $Im(z) = y$
+  - Modulus/ Norm/ Magnitude: $|z| = sqrt(x^2 + y^2)$
+  - Polar form: $z = |z| (cos theta + i sin theta) = r e ^(i theta) $ 
+  - Argument(angle) : $arg(z) = theta$ such that $z = |z| (cos theta + i sin theta)$. Angle between vector $(x,y)$ with real axis 
+=== operations
+  - addition: $z_1+z_2 = (x_1+x_2) + i(y_1+y_2)$
+  - multiplication: $z_1 z_2 = (x_1 x_2 - y_1 y_2) + i(x_1 y_2 + x_2 y_1)$ \
+    (normal multiplication with $i^2=1$ )
+  - Division:$ 
+      z_1/z_2 = (z_1z^*_1)/(z_2z^*_2) =(x_1 x_2 + y_1 y_2)/(x_2^2 + y_2^2) + i (x_2 y_1 - x_1 y_2)/(x_2^2 + y_2^2) 
+  $ 
+  - Commutativity: $z_1 z_2 = z_2 z_1 quad z_1+z_2 = z_2 + z_1$
+  - associativity: $(z_1 z_2) z_3 = z_1 (z_2 z_3) quad (z_1+z_2)+z_3=z_1+(z_2+z_3)$
+  - distributivity: $z_1(z_2+z_3) = z_1 z_2 + z_1 z_3$
+- Trig inequality: $|z_1+z_2| <= |z_1| + |z_2|$
+
+== Differentiation
+=== open sets in $bb(C)$
+  - Def: Let $z_0 in bb(C), r >0$.   Disk $B_r(z_0) = {z in  bb(C)| abs(z-z_0)<r}$ It is very important to note that it's not "less or equal" 
+
+    Given a set  $Omega in bb(C)$, A point $z_0 in Omega$ is called an interior point of $Omega$ if there exists $r>0$ s.t. $B_r(z_0) subset Omega$.  \
+    A set $Omega$ is *open* if every point of $Omega$ is an interior poinot of $Omega$. In other words, there are no points on the boundary of $Omega$ that are included in $Omega$.
+
+=== Holomorphic function
+Let $Omega$ be an open set in $bb(C)$, A function $f: Omega -> bb(C)$ is called *holomorphic* at $z_0 in Omega$ if the limit $ 
+    f'(z_0) = lim_(h -> 0) (f(z_0+h) - f(z_0))/h  (h in bb(C), h eq.not 0) $ exists.
+- The said function $f(z)$ is holomorphic on $Omega$ if it is holomorphic on every point of $Omega$.
+- In the special case that $f$ is holomorphic on $bb(C)$, $f$ is an *entire* function.
+
+- Holomorphic in 1st order guarantees holomorphic and analytic in any order and thus continous. 
+
+=== Differentiation operations
+If $f$ and $g$ are holomorphic on $Omega$, then 
+- $f+g$ is holomorphic on $Omega$, $ (f+g)' = f' + g' $
+- $f g$ is analytic on $Omega$, $ (f g)' = f'g + f g' $   
+- $f/g$ is analytic and, if $g(z) eq.not 0$, $ f/g = (f'g - f g')/g^2 $  
+
+=== Cauchy-Riemann equations
+for complex function $f: Omega -> bb(C) , f(z) = u(x,y)+i v(x,y)$ that is holomorphic at $z_0 = x_0 + i y_0$, then the partial derivatives of $u$ and $v$ exist and satisfy the Cauchy-Riemann equations: $ 
+    partial_x u = partial_y v, quad partial_y u = -partial_x v $ 
+
+Conversly, if $u$ and $v$ are continuously differentiable on an open set $Omega$ and satisfy the Cauchy-Riemann equations, then $f(z) = u(x,y) + i v(x,y)$ is holomorphic on $Omega$.
+
+In the language of logic, let C be "satisfying cauchy-riemann equations", and H be "function is holomorphic", then $H -> C$. If D is "u and v have continuous partial derivatives with respect to x and y", then $(C "&" D) <-> H$ 
