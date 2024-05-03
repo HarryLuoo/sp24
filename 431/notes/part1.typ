@@ -1,3 +1,4 @@
+
 #set math.equation(numbering:"(1)")
 
 = Sample Spaces, collection of events, probability measure
@@ -5,16 +6,23 @@
 - Collection of events $cal(F) $: subset of state space to which we assign a probability.
 - Probability measure: function that assigns a probability to each event.$P: F -> RR$. 
   - Range is $[0,1]$.
+- Axioms 
   - $P(Omega) = 1 "and" P(nothing)=0$
   - For pairwise disjoint events $A_1, A_2, ...$, \ $P(A_1 union A_2 union ...)  =  P(A_1) + P(A_2) + ...$
 
 #line(length:100%)
-= Sampling: Uniform, Replacement, Order
+= Sampling
+== Uniform sampling
+If the sample space $Omega$ has finitely many  elements and each outcome is equally likely, then for any event $A subset Omega$ we have 
+  $ 
+P(A) = (\# A)/(\# Omega)       
+  $ where \# means the "cardinality" of the set.
+  
 - uniform sampling: each outcome is equally likely
 - Binomial coeff $
 binom(n,k) = n!/(k!(n-k)!)
 $
-== Replacement
+== Sampling with Replacement, order matters
 - ex: sample K distinct marked balls from N balls in a box, *with* Replacement
   $
   Omega = {1,2,3,...,N}^K\
@@ -28,7 +36,7 @@ $
   P("none of the balls is marked 1")= binom(N-1,K)/binom(N,K)=(N-K)/N
   $
   
-  == Order
+== Order
   - order matters: $A_n^k=(n!)/(n-k)!$
   - order doesn't matter: $binom(n,k)=C_n^k=(n!)/(k!(n-k)!)$
 #line(length:100%)
