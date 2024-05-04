@@ -230,16 +230,16 @@ r(phi)= R'; e'' = 0, p'' = R'\
 => p'' = lambda_2^2 p' = p' slash (1 - e')\
 => lambda_2 = sqrt((R+R')/(2R'))
 $  
-== Verify: 
-using Newton 2nd, $
-alpha/R^2 = mu v_R^2 / R \
-=> v_R = sqrt(alpha/mu R)\
-=>V_R'/V_R = sqrt(R/R')
-$<7.eq.v>
-verify using conservation of angular momentum, $
-R v(phi = 0)= R'v(phi = pi), \ V_R' = lambda v(phi=pi)=lambda_2 v(phi=pi)/v(phi=0)lambda_1 v_R\ 
-=> v_R'/v_R = sqrt(R/R')
-$ agrees with @7.eq.v !!
+// == Verify: 
+// using Newton 2nd, $
+// alpha/R^2 = mu v_R^2 / R \
+// => v_R = sqrt(alpha/mu R)\
+// =>V_R'/V_R = sqrt(R/R')
+// $<7.eq.v>
+// verify using conservation of angular momentum, $
+// R v(phi = 0)= R'v(phi = pi), \ V_R' = lambda v(phi=pi)=lambda_2 v(phi=pi)/v(phi=0)lambda_1 v_R\ 
+// => v_R'/v_R = sqrt(R/R')
+// $ agrees with @7.eq.v !!
 
 
 
