@@ -1,4 +1,6 @@
 #set page("us-letter")
+
+
 // #set heading(numbering: "1.1")
 // #show heading: text.with(size: 11pt, weight: 1000, font: "Libre Baskerville")
 // #set text(11pt)
@@ -27,6 +29,8 @@
 //part2: exam 2 content
 #include "part2.typ"
 
+//part3: final content
+#include "part3.typ"
 //Appendix
 //#pagebreak()
 #include "apnd.typ"
