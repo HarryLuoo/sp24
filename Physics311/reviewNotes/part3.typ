@@ -167,3 +167,35 @@ $H(q,p,t) = sum_(j=1)^(n) p_j dot(q)_j - L(q,dot(q), t) quad $
 1D: $H = (p^2)/(2 m) + U(x)$ 
 - Hamilton's equation
   $dot(q)_i = (diff H)/(diff p_i) quad dot(p)_i = - (diff H)/(diff q_i)  $ 
+- _ex particle in polar_ $ quad L = T - U = 1/2 m (dot(r)^2 + r^2 dot(phi)^2) - U(r,phi) => quad p_r = (diff L)/(diff dot(r)) = m dot(r), med  p_phi = (diff L)/(diff dot(phi)) = m r^2 dot(phi)  $ 
+ $ 
+    H = p_r dot(r) + p_phi dot(phi) - L = (p_r^2)/(2m)+(p_phi^2)/(2 m r^2) => quad dot(r) = (diff H)/(diff p_r) = p_r/m, quad dot(phi) = (diff H)/(diff p_phi) = p_phi/(m r^2) \ dot(p)_r = -(diff H)/(diff r) = (p_phi^2)/(m r ^3) - (diff U)/(diff r), quad dot(p)_phi = -(diff H)/(diff phi) = - (diff U)/(diff phi)    
+$ 
+== Phase space
+- _ex harmonic oscillator_ $H = (p^2)/(2 m) + (1/2) m omega^2 x^2, quad omega = sqrt(k/m) $ 
+  $ 
+    {dot(x) = (diff H)/(diff p) = p/m, quad dot(p) = - (diff H)/(diff x) = - m omega^2 x}=> quad {
+    dot(q) = p/m, quad dot(p) = - m omega^2 x}
+    $
+$q(t_0+delta t) = q(t_0)+ dot(q) delta t = q_0 + p/m delta t; quad p(t_0 + delta t) = p(t_0) + dot(p) delta t = p_0 - m omega^2 q delta t$
+parametric ellipse in phase space. 
+
+== Liouville's thm 
+volume of  a region op phase space is conserved under time evolution, when boundary of volume and all pts inside move along their orit for some amount of time.
+
+== Poisson bracket
+Time evolution of an observable $A(q,p,t)$: $ (dif A)/(dif t) = (diff A)/(diff t) + underbrace(sum_(i=1)^(n) (diff A)/(diff q_i) (diff H)/(diff p_i) - (diff A)/(diff p_i) (diff H)/(diff q_i), eq.triple {A,H})     $  
+ 
+ More generally, for $A (q,p,t), quad B (q,p,t)$ $ 
+      {A,B} = sum_(i) (diff A)/(diff q_i) (diff B)/(diff p_i) - (diff A)/(diff p_i) (diff B)/(diff q_i)      
+ $ 
+ notice, ${A,p_i} = (diff A)/(diff q_i), {A,q_i} = - (diff A)/(diff p_i)  $ 
+
+- When $ (dif C)/(dif t) = (diff C)/(diff t)+ {C,H} = 0  $ then $C(q,p,t)$ is conserved.
+
+== Cononical transformation 
+consider transformation $q_i -> Q_i (q,t)$ the transformation is canonical iff the transformation leave the form of Hamilton's eq. unchanged.
+$ 
+   cases( dot(q) = (diff  H )/(diff p) , dot(p) = - (diff H)/(diff q) )=>
+   cases dot(Q) = (diff K)/(diff P), dot(P) = - (diff K)/(diff Q)
+$ where $K(Q,P,t)$ new Hamiltonian. 
