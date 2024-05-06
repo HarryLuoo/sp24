@@ -295,6 +295,6 @@ $
 $ 
 
 
-        #image("ex.symm1.png",width : 110%)
-        #image("ex.symm2.png",width: 110%)
-#image("ex.symm3.png", width: 100%)
+        #image("ex.symm1.png",width : 70%)
+        #image("ex.symm2.png",width: 70%)
+#image("ex.symm3.png", width: 70%)

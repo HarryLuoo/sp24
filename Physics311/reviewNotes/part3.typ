@@ -76,3 +76,94 @@ considering the sign and trends of $f(theta)$ given constrains on theta, we can 
 
 
 == Euler equations
+set body frame $(X,Y,Z) = (hat(e)_1^0,hat(e)_2^0,hat(e)_3^0$, space frame $(x_1,x_2,x_3) =(hat(e)_1,hat(e)_2,hat(e)_3)$
+Set any vector $arrow(A)= sum A_i^0 hat(e)_i^0 = sum A_i hat(e)_i $ By magic of vec analysis, $ 
+( (dif arrow(A))/(dif t) )_"Space" = ((dif arrow(A))/(dif t))_"Body" + arrow(Omega) times arrow(A)_"Space"
+$  
+When applied to $ ((dif arrow(L))/(dif t))_"Space" =  arrow(Kappa) = ( (dif arrow(L))/(dif t) )_"body" + arrow(Omega) times arrow(L)$, recognizing $L_i= I_i Omega_i$:
+$ 
+    I_1 dot(Omega)_1 + (I_3 - I_2) Omega_2 Omega_3 = K_1\
+    I_2 dot(Omega)_2 + (I_1 - I_3) Omega_3 Omega_1 = K_2\
+    I_3 dot(Omega)_3 + (I_2 - I_1) Omega_1 Omega_2 = K_3\ 
+$ $K_i = 0$ if $arrow(L)$ is conserved on $i$ axis.
+- _ex symmetric top_ $I_1=I_2= I, arrow(K) =0$
+  $quad (dot(Omega)_1 + (I_3-I_1)/(I_perp) Omega_2 Omega_3 = 0;med 
+      dot(Omega)_2 + (I_1-I_3)/(I_perp) Omega_3 Omega_1 = 0; med
+      dot(Omega)_3 = 0)$ 
+  let $omega = ((I_3 - I_perp)slash(I_perp)) Omega_3 => 
+#rect(inset: 4pt)[
+$ display((Omega_1 = A cos omega t; med Omega_2 = -1/omega dot(Omega)_1 = +A sin omega t))$
+]
+ $  
+
+
+ = Motion in non-inertial frame
+ - Set non-inertial frame with velocity $arrow(V)(t),med arrow(A) = dot(arrow(V)), quad arrow(v) = arrow(v)' + arrow(V)(t)$ where $arrow(v)'$ is velocity w.r.t. non-inertial frame.
+
+lagrangian $L' = 1/2 m v'^2 - m arrow(r)' dot arrow(A) - U$ , using E-L eq:  $ m dot(arrow(v))' = - (diff U)/(diff arrow(r)') - m arrow(A)$  
+
+- _ex pendulum in acc. car_ $quad m dot.double(arrow(r)) = arrow(T) + m arrow(g) - m arrow(A) 
+$ ,
+
+ finding equil. angle: $ arrow(T) = -m (arrow(g)- arrow(A)) = -m arrow(g)_"eff"$ , then use geometry between $arrow(g) , -arrow(A) => tan phi_0 = A/g$. Oscillation freq. $omega = sqrt(g_"eff"slash l)$
+
+ == Motion in rotating frame
+ Set rotation with $arrow(Omega)$, $L = 1/2 m v^2 + arrow(m v) dot (arrow(Omega) times arrow(r)) + 1/2 m (arrow(Omega) times arrow(r))^2 - m arrow(r) dot arrow(A)- U$  
+
+ Using E-L, 
+ $#rect(inset: 8pt)[
+$display( m dot(arrow(v)) = - (diff U)/(diff arrow(r)) - m arrow(A) + 2 m (arrow(v) times arrow(Omega)) + m arrow(Omega) times (arrow(r) times arrow(Omega)) + m arrow(r) times dot(arrow(Omega)))$
+] $ 
+- Namely, $ 
+    m dot(arrow(v)) = - (diff U)/(diff arrow(r)) + arrow(F)_"cor" + arrow(F)_"cent"\
+    arrow(F)_"Cor" = 2 m (arrow(v) times arrow(Omega)), quad arrow(F)_"cent" = m arrow(Omega) times (arrow(r) times arrow(Omega))= m(arrow(Omega) times arrow(r)) times arrow(Omega)
+$ 
+
+
+- _ex free fall on earth, centrifugal force  _  $ med arrow(F) =arrow(g)_0 + m Omega^2 R sin theta hat(rho) => arrow(g)_"eff" = arrow(g_0) + Omega^2 R sin theta hat(rho)$  
+
+- _ex free fall, coriolis force_ $quad dot(arrow(v)) = arrow(g) + 2 arrow(v) times arrow(Omega), quad arrow(Omega) = Omega sin theta hat(y) + Omega cos theta hat(z)$ 
+
+In components, $ 
+    arrow(v_x) = 2 Omega ( v_y cos theta - v_z sin theta)\
+    arrow(v_y) = -2 Omega v_x cos theta\
+    arrow(v_z) = 2 Omega v_x sin theta - g 
+$ Free fall EOM: $arrow(R) = integral v  dif r $, consider $arrow(v) = arrow(v_1) + arrow(v_2) = -arrow(g) + 2 arrow(v_1) times arrow(Omega)+2 arrow(v_2) times arrow(Omega)$  where approximately, $arrow(v_2) = 2(arrow(v_0) - g t hat(z) ) times arrow(Omega)$. If no initial velocity, integrating velocity in x components gives, 
+$x(t) = 1/3 g Omega ((2h)/(g))^(3 slash 2) sin theta $ 
+
+
+- _ex foucaults pendulum_
+  EOM $  
+      
+  $ 
+  
+  #figure(
+    grid(
+        columns: 2,     // 2 means 2 auto-sized columns
+        gutter: 2mm,    // space between columns
+        image("assets/2024-05-06-15-05-32.png", width: 50%),
+        $arrow(r) = l sin  beta cos alpha hat(x) +  l sin beta sin alpha hat(y) + (l - l cos beta) hat(z)\ 
+      arrow(T) = - T sin beta cos alpha hat(x) - T sin beta sin alpha hat(y) + T cos beta hat(z)\
+      arrow(Omega) = Omega sin theta hat(y) + Omega cos theta hat(z)$ 
+, 
+    ))\
+$ 
+    cases(T = m g, m dot.double(x) = T_x + 2 m hat(x) dot (dot(arrow(r)) times arrow(Omega)) = - (m g x)/l + 2 m Omega dot(y) cos theta,
+    m dot.double(y) = -(m g y)/(l) - 2 m Omega dot(x) cos theta)
+$ letting $omega^2 = g/l,Omega_z = Omega cos theta, quad
+#rect(inset: 8pt)[
+$ display(eta = x + i y = e^(i gamma t))$
+]
+$
+$ 
+    dot.double(x) + omega^2 x = 2 Omega_z dot(y), dot.double(y) + omega^2 y = -2 Omega_z dot(x) \
+    gamma = - Omega_z plus.minus sqrt(omega^2 - Omega_z^2) \
+    eta(t) = a e^(- i Omega_z t) cos omega t\
+    =>cases(x = a cos Omega_z t cos omega t, y = a sin Omega_z t cos omega t) 
+$ 
+ 
+= Hamiltonian Mechanics
+$H(q,p,t) = sum_(j=1)^(n) p_j dot(q)_j - L(q,dot(q), t) quad $ 
+1D: $H = (p^2)/(2 m) + U(x)$ 
+- Hamilton's equation
+  $dot(q)_i = (diff H)/(diff p_i) quad dot(p)_i = - (diff H)/(diff q_i)  $ 
