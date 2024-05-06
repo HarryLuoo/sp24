@@ -1,5 +1,5 @@
 #set heading(numbering: "1.1")
-#set page(margin: (x: 4cm, y: 2cm))
+#set page(margin: (x: 3cm, y: 1cm))
 #import "@preview/wrap-it:0.1.0": wrap-content
 #text(font: "Cambria",size: 14pt,weight: "black")[Brief Theory of Probability: Notes from MATH 431]\ Compiled by Harry Luo
 #line(length:100%, stroke:(thickness: 2pt))
@@ -13,3 +13,6 @@
 
 // part 2: exam 2 contents
 #include "part2.typ"
+
+// part 3: exam 3 contents
+#include "part3.typ"
