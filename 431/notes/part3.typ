@@ -126,8 +126,11 @@ $
 - for any r.v. $X_i,Y_j$ and real numbers $a_i,b_j$:$ 
     "COV"(sum_(i=1)^n a_i X_i, sum_(j=1)^m b_j Y_j) = sum_(i=1)^n sum_(j=1)^m a_i b_j "COV"(X_i,Y_j) 
 $ 
-    
-
+- Practically, $ 
+    "Cov"(Y_1+Y_2, Z) = "Cov"(Y_1,Z) + "Cov"(Y_2,Z) \
+    "Cov"(X,X) = "Var"(X) \
+$ 
+ 
 
 === Variance of sum of r.v.s
 $ 
@@ -162,10 +165,7 @@ normally used to find $P(X >= c+ mu) <= (sigma^2)/(c^2) "and"quad P(X<= mu-c)<= 
 For a sequence of iid r.v.s $X_1,X_2,...,X_n$ with finite mean $E[X_i] = mu$ and finite variance $"Var" [X_i] = sigma^2$, letting $S_n = X_1+X_2+...+X_n$, for any $epsilon > 0$, we have $ 
     lim_(n -> infinity) P(|S_n/n - mu| < epsilon) = 1   
 $
-The following is more useful, and is derived from chebychev's:
-$ 
-    p(|S_n/n - mu| >= epsilon) <= sigma^2/(n epsilon^2)
-$ 
+
 == Generalized Central Limit Theorem
 For a sequence of iid r.v.s $X_1,X_2,...,X_n$, where n is the sample size, with finite mean $E[X_i] = mu$ and finite variance $"Var" [X_i] = sigma^2$, letting $S_n = X_1+X_2+...+X_n$, we have $ 
     lim_(n -> infinity) P(a <= (S_n - n mu)/(sigma sqrt(n) )<= b) = Phi(b) - Phi(a)
