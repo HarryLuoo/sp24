@@ -199,3 +199,63 @@ $
    cases( dot(q) = (diff  H )/(diff p) , dot(p) = - (diff H)/(diff q) )=>
    cases dot(Q) = (diff K)/(diff P), dot(P) = - (diff K)/(diff Q)
 $ where $K(Q,P,t)$ new Hamiltonian. 
+
+
+= Exerts from practice problems
+== constraints, small Oscillations
+A particle of massmmoves withoutfriction on the inside wall of an axially symmetric vessel given by $z=b^2(x^2+y^2)$
+- KE in cylindrical coords: $ 
+    T = 1/2 m (dot(rho)^2 + rho^2 dot(theta)^2 + dot(z)^2), quad dot(z) = b dot(rho) rho =>\
+    L = m/2 [dot(rho)^2 (1 + b^2 rho^2) + rho^2 dot(theta)^2] - (m g b)/(2) rho^2 
+$ E-L: $ 
+    dot.double(rho)(1 + b^2 rho^2) + b^2 dot(rho)^2 rho - rho dot(theta)^2 + g b rho = 0\
+    m rho^2 dot(theta) = "const" eq.triple M  " conserved angular momentum" 
+$ 
+ 
+- energy and angular momentum given $z_0, b, g,m$
+  $ E = m/2 [dot(rho)^2 (1 + b^2 rho^2) + rho^2 dot(theta)^2] + (m g b)/(2) rho^2 $  
+  For a fixed $z_0$, $rho_0$ is the equilibrium position, and $dot(rho) = 0$
+  , then $ 
+      E = m/2 rho_0^2 dot(theta)^2 + m g b rho_0^2/2 \
+      dot(theta)^2 = g b\
+      => E = 2 m g z_0
+  $ 
+  plugging in $ dot(theta), rho=rho_0$, we have
+  $M = 2 m z_0 sqrt(g/b) $  
+
+- frequency of small oscillations about equilibrium
+  perturbation: $rho = rho_0 + epsilon$, neglecting anything with $epsilon^2$  , EOM of rho is $ 
+      dot.double(epsilon)(1+b^2rho_0^2) - rho dot(theta)^2 + g b rho_0+ g b epsilon = 0\ 
+  $ 
+  want to know $rho dot(theta)^2$, can be found from $theta$ EOM$  
+  rho dot(theta)^2 = M^2/(m^2 rho^(3) )= M^2/(m^2 rho_0^3) (1/(1+ epsilon/rho_0)^(3) ) approx M^2/(m^(3 ) rho_0^4)(1- 3 epsilon/rho_0)\
+  = b rho_0 g - 3 b g epsilon 
+  $ 
+  Plugging in to rho EOM, we have $ 
+      dot.double(epsilon)(1+ 2 b z_0) + 4 g b epsilon = 0\
+      dot.double(epsilon) = - omega^2 epsilon, Omega^2 = (4 g b)/(1 + 2 b z_0)
+  $
+= Conservation laws 
+two particles of ${m_1,q_1,arrow(r)_1},{m_2,q_2, arrow(r)_2$ in capacitor with $arrow(E) = E_0 hat(z)$, particles interact with $U(r_1,r_2) = (k)/(abs(arrow(r_1)- arrow(r_2))) e^(-abs(arrow(r)_1 - arrow(r_2))/lambda) $. 
+List all conserved quantities and associate each with a specific symmetry of the problem.
+- lagrangian $L = 1/2 m_1 dot(arrow(r))_1^2 + 1/2 m_2 dot(arrow(r))_2^2 - U + E_0(q_1 z_1 + q_2 z_2)$. Setting $arrow(r) = (x,y,z) = arrow(r)_1 - arrow(r)_2, arrow(R) = (X,Y,Z) = (arrow(m_1r)_1 + m_2 arrow(r)_2)/(M), mu = (m_1 m_1)/(M)$, we can have$ 
+    L = [1/2 M dot(arrow(R))^2 + (q_1+q_2) E_0 Z] + [1/2 mu dot(arrow(r))^2 - U (r)+ (q_1m_2 - q_2m_2)/M med E_0 z]\ 
+$ 
+Observe: momenta $P_x = (diff L)/(diff dot(X)) , P_y = (diff L)/(diff dot(Y)) $ are conserved. Invariance under time translation gives conserved energy $ E= (diff L)/(diff dot(R))dot(R) + (diff L)/(diff dot(r))dot(r) -L $
+Angular momentum $L_"ttl" = arrow(r_1) times arrow(p_1) + arrow(r_2) times arrow(p_2) = M arrow(R) times dot(arrow(R)) + mu arrow(r) times dot(arrow(r)) = arrow(R) times arrow(P) + arrow(r) times arrow(p)$. Invariance under rotation about $hat(z): R -> R + epsilon hat(z) times R, quad r -> arrow(r) + epsilon hat(z) times arrow(r)$ gives conserved $L_z = (arrow(R) times arrow(P))_z quad l_z = [arrow(r) times arrow(p)]_z$.
+
+= Normal modes
+A system of $N$ particles with masses $m_i$ moves around a circle of radius a, with position angle $theta_i$. Interaction potential $U = k/2 sum_(1)^(N) (theta_(j+1) - theta_j)^2 .$, with $theta_(N+1) = theta_1+2 pi$. lagrangian of system is $a^2/2 sum_(1)^(N) m_j dot(theta)_j^2 - U $
+- show Largrangian for particle i, show system in equalibrium when particles are equally spaced.
+  $ 
+      L = a^2/2 sum_(1)^(N) m_j dot(theta)_j^2 - k/2 sum_(1)^(N) (theta_(j+1) - theta_j)^2\ 
+  $ E-L for $theta_i: quad a^2m_i dot.double(theta)_i = k(theta_(i+1) - theta_i)- k (theta_i - theta_(i-1) ) = -k [2 theta_i - (theta_(i+1) + theta_(i-1) )]$ 
+  When eqaully spaced, $theta_i = (2pi i)/N$, thus $dot.double(theta)_i = 0$ for all particles, thus equalibrium.
+- show the system always has a normal mode of osc. with 0 freq.
+  $ 
+      bb(M) dot dot.double(arrow(theta)) = - bb(K) dot arrow(theta), quad M_(i j) = a^2 m_i delta_(i j), quad K_(i j) = k(2 delta_(i,j) - delta_(i,j+1) - delta_(i, j-1)  ) \ 
+  $ take anstaz susbsitution $arrow(theta)->arrow(z) = arrow(b) e^(i omega t)  $ gives $omega^2 bb(M) dot arrow(b) = bb(K) dot arrow(b)$ , where $arrow(b)$ is a constant vec. Look for a 0 freq $omega = 0$ , $bb(K) dot arrow(b) = 0$ holds, so $b_i = b$. let $b = Theta(t)$, knowing $dot.double(Theta) = 0$  recall our subsitution, the time evo of $theta_i(t) = Theta_0+ Theta_1 t$  i.e. trajectory is all masses rotating at same rate $Theta_1$    
+  
+- find all normal modes when $N =2, M_1 = k m slash  a^2, m_2 = 2 k m slash a^2$ . Using standard normal mode analysis,
+  for $N = 2, $ 
+  

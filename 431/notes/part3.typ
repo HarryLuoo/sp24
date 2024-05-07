@@ -171,7 +171,7 @@ For a sequence of iid r.v.s $X_1,X_2,...,X_n$, where n is the sample size, with 
     lim_(n -> infinity) P(a <= (S_n - n mu)/(sigma sqrt(n) )<= b) = Phi(b) - Phi(a)
 $
 More practically, we use $ 
-   P(S>= k) = P((S_n-mu)/(sqrt(n sigma^2) ) >= (k-n mu)/(sqrt(n sigma^2) )) = 1- Phi((k-n mu)/(sqrt(n sigma^2) ))
+   P(S>= k) = P((S_n-n mu)/(sqrt(n sigma^2) ) >= (k-n mu)/(sqrt(n sigma^2) )) = 1- Phi((k-n mu)/(sqrt(n sigma^2) ))
 $ 
 
 = Conditional distribution
