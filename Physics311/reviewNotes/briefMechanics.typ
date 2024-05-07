@@ -19,7 +19,7 @@
 #show heading: text.with(size: 6pt, weight: 990, font: "Libre Baskerville")
 #set text(5pt)
 #set page(margin: (x: 0.5cm, y: 0.5cm), columns: 4, flipped: true)
-#set math.equation(numbering:"(1)")
+#set math.equation(numbering:"[1")
 #show math.equation: set text(5pt)
 
 

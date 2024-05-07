@@ -1,3 +1,5 @@
+#set math.equation(numbering: "[1")
+
 = Angular momentum of a rigid body 
 == $arrow(L)$ in non-inertial frame 
 $ 
@@ -201,7 +203,7 @@ $
 $ where $K(Q,P,t)$ new Hamiltonian. 
 
 
-= Exerts from practice problems
+= Exerpts from practice problems
 == constraints, small Oscillations
 A particle of massmmoves withoutfriction on the inside wall of an axially symmetric vessel given by $z=b^2(x^2+y^2)$
 - KE in cylindrical coords: $ 
@@ -235,7 +237,7 @@ $
       dot.double(epsilon)(1+ 2 b z_0) + 4 g b epsilon = 0\
       dot.double(epsilon) = - omega^2 epsilon, Omega^2 = (4 g b)/(1 + 2 b z_0)
   $
-= Conservation laws 
+== Conservation laws 
 two particles of ${m_1,q_1,arrow(r)_1},{m_2,q_2, arrow(r)_2$ in capacitor with $arrow(E) = E_0 hat(z)$, particles interact with $U(r_1,r_2) = (k)/(abs(arrow(r_1)- arrow(r_2))) e^(-abs(arrow(r)_1 - arrow(r_2))/lambda) $. 
 List all conserved quantities and associate each with a specific symmetry of the problem.
 - lagrangian $L = 1/2 m_1 dot(arrow(r))_1^2 + 1/2 m_2 dot(arrow(r))_2^2 - U + E_0(q_1 z_1 + q_2 z_2)$. Setting $arrow(r) = (x,y,z) = arrow(r)_1 - arrow(r)_2, arrow(R) = (X,Y,Z) = (arrow(m_1r)_1 + m_2 arrow(r)_2)/(M), mu = (m_1 m_1)/(M)$, we can have$ 
@@ -244,7 +246,7 @@ $
 Observe: momenta $P_x = (diff L)/(diff dot(X)) , P_y = (diff L)/(diff dot(Y)) $ are conserved. Invariance under time translation gives conserved energy $ E= (diff L)/(diff dot(R))dot(R) + (diff L)/(diff dot(r))dot(r) -L $
 Angular momentum $L_"ttl" = arrow(r_1) times arrow(p_1) + arrow(r_2) times arrow(p_2) = M arrow(R) times dot(arrow(R)) + mu arrow(r) times dot(arrow(r)) = arrow(R) times arrow(P) + arrow(r) times arrow(p)$. Invariance under rotation about $hat(z): R -> R + epsilon hat(z) times R, quad r -> arrow(r) + epsilon hat(z) times arrow(r)$ gives conserved $L_z = (arrow(R) times arrow(P))_z quad l_z = [arrow(r) times arrow(p)]_z$.
 
-= Normal modes
+== Normal modes
 A system of $N$ particles with masses $m_i$ moves around a circle of radius a, with position angle $theta_i$. Interaction potential $U = k/2 sum_(1)^(N) (theta_(j+1) - theta_j)^2 .$, with $theta_(N+1) = theta_1+2 pi$. lagrangian of system is $a^2/2 sum_(1)^(N) m_j dot(theta)_j^2 - U $
 - show Largrangian for particle i, show system in equalibrium when particles are equally spaced.
   $ 
@@ -257,5 +259,113 @@ A system of $N$ particles with masses $m_i$ moves around a circle of radius a, w
   $ take anstaz susbsitution $arrow(theta)->arrow(z) = arrow(b) e^(i omega t)  $ gives $omega^2 bb(M) dot arrow(b) = bb(K) dot arrow(b)$ , where $arrow(b)$ is a constant vec. Look for a 0 freq $omega = 0$ , $bb(K) dot arrow(b) = 0$ holds, so $b_i = b$. let $b = Theta(t)$, knowing $dot.double(Theta) = 0$  recall our subsitution, the time evo of $theta_i(t) = Theta_0+ Theta_1 t$  i.e. trajectory is all masses rotating at same rate $Theta_1$    
   
 - find all normal modes when $N =2, M_1 = k m slash  a^2, m_2 = 2 k m slash a^2$ . Using standard normal mode analysis,
-  for $N = 2, $ 
+  for $N = 2, quad omega^2 bb(M) dot arrow(b) = bb(K) dot arrow(b) $ becomes $ 
+      display(mat(a^2omega^2 m_1 - 2k, 2k; 2k, a^2 omega^2 m_2 -- 2k)) vec(b_1, b_2) = 0  
+  $ <eq.normal> zero det gives $ 
+      a^(4) omega^(4) m_1 m_2 - 2k a^2 omega^2 (m_1+m_2) = 0 quad => omega^2 = 0 "or" (2k (m_1+m_2))/(a^2 m_1 m_2) 
+  $ 
+  setting $m_2 = 2m_1 = k m slash a^2$, the second sol becomes $ omega^2 = 3/m$
+
+  Corresponding normal mode is pound by plugging $omega$ into  @eq.normal   
+  $ 
+      display(mat(1,2;2,4)) vec(b_1,b_2) = 0 quad => b_1 = -2 b_2 eq.triple A e^(- i delta)  
+  $ taking the real part, we find the SOLUTION $ 
+      vec(theta_1, theta_2) = vec(1,-1/2) A cos (omega t- delta) 
+  $ 
+  two masses osc. exactly out of phase, with m2 osc. with half the amplitude.
   
+  == non-inertial frame 
+a pendulum suspended inside a car, accelerated at cosntant $arrow(A)$.
+- lagrangian, and EOM for angle $theta$, the angle from vertical.
+  set $X$ be coord of the moving support with $arrow(A)$ 
+$x = X + l sin phi, quad y =  l cos phi$ 
+
+  $T = 1/2m(dot(x)^2 + dot(y)^2) = 1/2 m l^2 dot(phi)^2 + m l dot(X) dot(phi) cos phi + 1/2 m dot(X)^2$ ,
+  $U = - m g y = - m g l cos phi$
+
+  $L = T - U = 1/2 m l^2 dot(phi)^2 + m g l cos phi - m A l sin phi$ 
+  feeding into EL: $l dot.double(phi) = - g sin phi - A cos phi$
+
+- Find equilibrium, show it is stable, and find freq.
+  the equilibrium condition is that the forcee vanishes$ 
+      - g sin phi_0 - A cos phi_0 = 0 quad => tan phi_0 = -A slash g 
+  $ to find equil. take $phi = phi_0 + delta phi$, expanding the above$ 
+      l delta dot.double(phi) = ( - g cos phi_0 + A sin phi_0) delta phi = -delta phi sqrt( g^2+ A^2)  \ => delta dot.double(phi) = - omega^2 delta phi, quad omega^2 = (g^2 + ^2)/(l)
+  $ 
+    
+  == Hamiltonian of particle in rotating frame
+  find H of said particle, and show coriolis force does not appear in hamiltonian 
+
+  Largrangian: $L = 1/2 m v^2 + m  dot (arrow(Omega) times arrow(r)) + 1/2 m (arrow(Omega) times arrow(r))^2 - U$
+  Do conical transformation, the momentum is $arrow(P) = (diff L)/(diff v) = m arrow(v) + m Omega times arrow(r)$
+
+  Hamiltonian $H = arrow(p) dot arrow(v) - L = (p^2)/(2m ) - arrow(Omega) dot (arrow(r) times arrow(p) ) + U$  THis can also be $ 1/2 m v^2 - 1/2 m (arrow(Omega) times arrow(r)^2) + U$
+
+  Observe that there is no term linaer in velocity from centrifugal force, therefore no coriolis force in Hamiltonian.
+
+== conservation laws in hamiltonian
+1D system with $H = (p^2)/(2) - 1/(2 q^2)$, show that $ D = (p q)/(2) - H t quad$ is conserved.
+- EOM: $ 
+    dot(q) = (diff H)/(diff p) = p quad dot(p)= - (diff H)/(diff q) = - 1/q^3 
+$ 
+ now write $ (dif D)/(dif t) = (p dot(q))/(2) + (dot(p) q)/(2) - H = (p^2 )/(2) - (1)/(2 q^2) - H = 0$ as wanted.
+
+ - or use possion braket:
+  $ (dif D)/(dif t) = {H,D} + (diff D)/(diff t) = {H, (p q )/(2)} - H \ = (p * p/2 - 1/q^3 * q/2) - p^2/2 + 1/(2 q^2)  =0 $ 
+
+
+  == Hamiltonian of a rigid body
+  lagrangian of heavy symm top of mass M, at pt O with distance $l$ from the center of mass is $ 
+      L = (I_perp)/(2) (dot(theta)^2 + dot(phi)^2 sin^2theta) + (I_3)/(2) (dot(psi)+ dot(phi) cos theta)^2- M g l cos theta
+  $ Observe momenta, and Hamiltonian H. find ham's eqn for this system. Identify the three conserved quantities and explain their physical meaning.
+  $ 
+      p_theta = (diff L)/(diff dot(theta)) = I_perp dot(theta)\
+      p_phi = (diff L)/(diff dot(phi)) = I_3 cos theta (dot(psi) + dot(phi) cos theta) + I_perp dot(phi) sin^2theta\
+      p_psi = (diff L)/(diff dot(psi)) = I_3 ( dot(psi) + dot(phi) cos theta)   
+  $ and the Hamilitonian is $ H = p_theta dot(theta) + p_phi dot(phi) + p_psi dot(psi) - L$ , plugging in gives $ 
+      H = (p_theta^2)/(2 I_perp) + (p_psi^2)/(2 I_3) + ((p_phi - p_psi cos theta)^2)/(2 I_perp sin^2 theta) + M g l cos theta 
+  $ Ham's eqn are
+  #image("assets/2024-05-07-10-43-01.png", width: 90%)
+
+  No explicit time dependence means the energy is conserved. The energy is now hamiltoninan, $E = H(q(t), p(t))$   From ham's eqn, we see $ 
+      dot(p)_phi = - (diff H)/(diff phi) = 0, quad dot(p)_psi = - (diff H)/(diff psi) = 0 
+  $ momentum on the $phi$ is conserved, due to the fact that there is no z-component to the gravitational torque. 
+  momentum on $psi$ is conserved,  due to the fact that there is nox3-component to the gravitational torque
+
+== Dynamics in a magnetic field
+consider motion of a charged particle q in the presence of B and E field. Lagrangian of particle is $ L= 1/2 m v^2 - q phi(arrow(r),t)+ q arrow(A)(arrow(r),t) dot arrow(v)  $  where $phi, arrow(A)$ are the  scalar and vector potentials, related to the  electric and magnetic fields by  
+  $ 
+      bb(E) = - nabla phi - (diff arrow(A))/(diff t), quad bb(B) = nabla times arrow(A)  
+  $ 
+  
+  - write E-L, express results in terms of E and B, verify that this is lorentz force law.
+  $ 
+      -q partial_i phi + q(partial_i A_j) dot(x)_j = (dif )/(dif t) (m dot(x)_i + q A_i)  
+  $ 
+
+  expanding gets us $ 
+      m dot.double(x)_i = q( -partial_i phi - partial_t A_i) + q dot(x)_j (partial_i A_j - partial_j A_i) 
+  $ 
+  algebra magic tells us that $arrow(v) times bb(B) = v_j (partial_i A_j - partial_j A_i) quad E_i = -partial_i phi - partial_t A_i$ , so this turns out to be
+  $ 
+      m dot.double(r) = q (arrow(E) + arrow(v) times arrow(B))
+  $ 
+  
+  - show lagrangian is invariant under gauge transformation 
+  #image("assets/2024-05-07-11-10-10.png")
+
+  - find $p = (diff L)/(diff v) $from lagrangian and from  which recover the hamiltonian.
+  $ 
+      arrow(p) = (diff L)/(diff v) = m v + q arrow(A)  quad => v = 1/m (arrow(p) - q arrow(A))\
+      H = arrow(p)dot arrow(v) - L = ((arrow(p) - q arrow(A))^2)/(2m) + q phi(arrow(r), t)
+  $ 
+
+- Compute the prosson brackets between the different components of the kenetic momentum $arrow(k) = m arrow(v)$
+  from the above answer we have $k_i = p_i - q A_i$
+  use poisson brackets $ 
+      {k_i, k_j} &= {p_i - q A_i, p_j - q A_j} \ 
+      & = q({A_i, p_j} - {A_j,p_i} \ 
+      & = q( (diff A_i)/(diff x_j) - (diff A_j)/(diff x_i) ) \ 
+      & = - q epsilon_(i j k) B_k
+  $ the poisson brackets of the components of the kinetic momentum is thus non-zero in a magnetic field.
+    
