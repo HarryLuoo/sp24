@@ -13,7 +13,7 @@
    This implies that $ integral.double_(S) (nabla times arrow(F)) dot arrow(n) dif S= 0$ \ 
   #rect(inset: 8pt)[Thus the result of the given line integral is 0]
 
-+ Choose S as the triangle with vertices $(1,0,0),(0,1,0),(0,0,1)$ as suggested, and S follows the equation $x+y+z=1$. Normal vector to S is $arrow(n) = (1 ,1,1)$
++ Choose A as the triangle with vertices $(1,0,0),(0,1,0),(0,0,1)$ as suggested, and A follows the equation $x+y+z=1$. Normal vector to S is $arrow(n) = (1 ,1,1)$
      $ 
     nabla times arrow(F) = det display(mat(i,j,k; (diff )/(diff x) ,(diff )/(diff y) ,(diff )/(diff z); x+y^2,y+z^2,z+x^2)) = display(mat(-2z;-2x;-2y)) 
      $ 
@@ -23,9 +23,9 @@
            &= -2integral.double_(S) x+y+z dif A \ 
            & = -2integral.double_(S) x+y+1-x-y dif A \ 
            & = -2integral.double_(S) 1 dif A \ 
-           & = -2 times "Area"_"triangle" \ 
-           & = -2(1/2 times sqrt(1^2+1^2) times sqrt(1^2+1^2) sin (pi/3)) \ 
-           & = -2 sqrt(3)/2 = #rect[-sqrt(3) ] 
+           & = -2 times "Area: projection of 3d triangle on the xy plane" \ 
+           & = -2 times 1/2 \ 
+           & = -1
       $ 
 
 + #rect($ 

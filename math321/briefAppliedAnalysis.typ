@@ -49,6 +49,12 @@ $
 - triple vector product $arrow(a) times( arrow(b) times arrow(c))=(arrow(b)dot arrow(a))arrow(c)- (arrow(c)dot arrow(a))arrow(b)$
 
 
+== Projection
+The projection of $arrow(a)$ onto $arrow(b)$ is given by $ 
+    (arrow(a) dot arrow(b))/(norm(arrow(b))^2) med arrow(b)  = (a dot hat(b)) hat(b)
+$ 
+  
+
 #line(length: 100%)
 
 = Vector calculus
@@ -108,7 +114,9 @@ $
     J(u,v)=(diff (x,y))/(diff (u,v)) equiv det mat( (diff x)/(diff u) , (diff x)/(diff v) ; (diff y)/(diff u) , (diff y)/(diff v) )  
 $ 
 - Jacobian in coordinate transformation
- $ 
+Upon evaluating an integral, we can change the coordinates of the integral from ${x,y} -> {u,v}$ by parametrize the variables: $ x = x(u,v) quad y= y(u,v) $  
+Then the integral becomes
+$ 
      integral.double_(S) f(x,y) dif A = integral.double_(D) f(x(u,v),y(u,v)) |J(u,v)| dif u dif v
 $ 
 
@@ -159,8 +167,7 @@ $
 $ 
 
 
-  == Stokes' theorem
-
+  == Surface Integral 
  - for a surface, $ arrow(r)(u,v) = (x(u,v), y(u,v), z(u,v))\ => integral.double_(S) arrow(F) dot  dif arrow(S) = integral.double_(S) arrow(F) dot arrow(n)  dif S = integral.double_(D) arrow(F)(arrow(r)(u,v)) dot (arrow(r_u) times arrow(r_v))  dif A 
   
   $ 
@@ -170,6 +177,7 @@ $
       integral_(S) arrow(F) dot dif arrow(s) = integral.double_(D) (P,Q,R) dot (-partial_x g, -partial_y g, 1)  dif A   
   $ 
    
+ == Stokes' theorem
 
 
   Let $F: R^3 -> R^3$ be a vector field on $R^3$ , then $ 
@@ -228,3 +236,4 @@ for complex function $f: Omega -> bb(C) , f(z) = u(x,y)+i v(x,y)$ that is holomo
 Conversly, if $u$ and $v$ are continuously differentiable on an open set $Omega$ and satisfy the Cauchy-Riemann equations, then $f(z) = u(x,y) + i v(x,y)$ is holomorphic on $Omega$.
 
 In the language of logic, let C be "satisfying cauchy-riemann equations", and H be "function is holomorphic", then $H -> C$. If D is "u and v have continuous partial derivatives with respect to x and y", then $(C "&" D) <-> H$ 
+
