@@ -6,6 +6,7 @@
 Notes on MATH 321]
 Harry Luo
 
+The course contents could be better had it been Fabien's class, but probably Trighn saved my GPA. 
 #line(length:100%, stroke:(thickness: 2pt))
 #outline(indent: auto,)
 = Vector algebra
@@ -51,7 +52,10 @@ $
 
 == Projection
 The projection of $arrow(a)$ onto $arrow(b)$ is given by $ 
-    (arrow(a) dot arrow(b))/(norm(arrow(b))^2) med arrow(b)  = (a dot hat(b)) hat(b)
+#rect(inset: 8pt)[
+$ display(    (arrow(a) dot arrow(b))/(norm(arrow(b))^2) med arrow(b)  = (a dot hat(b)) hat(b) )$
+]
+
 $ 
   
 
@@ -71,7 +75,10 @@ $
   == Line integration
 -  for curve $arrow(r)(t) =(x(t),y(t))$ 
   $ 
-      integral_(C) f(x(t),y(t)) sqrt(((dif x)/(dif t))^2+ ( (dif y)/(dif t))^2)     dif   t
+#rect(inset: 8pt)[
+$ display(      integral_(a)^(b) f(x,y) dif s = integral_(a)^b f[x(t),y(t)] sqrt(((dif x)/(dif t))^2+ ( (dif y)/(dif t))^2)     dif   t)$
+]
+
   $ 
 - center of mass $(overline(x), overline(y), overline(z))$, where $ 
     cases(
@@ -111,7 +118,10 @@ $
   == Jacobian
 
 - Def: Given a transformation $(u,v) in D --> [x(u,v) , y(u,v) ] in S$, the Jacobian is given by $ 
-    J(u,v)=(diff (x,y))/(diff (u,v)) equiv det mat( (diff x)/(diff u) , (diff x)/(diff v) ; (diff y)/(diff u) , (diff y)/(diff v) )  
+#rect(inset: 8pt)[
+$ display(    J(u,v)=(diff (x,y))/(diff (u,v)) equiv det mat( (diff x)/(diff u) , (diff x)/(diff v) ; (diff y)/(diff u) , (diff y)/(diff v) )  )$
+]
+
 $ 
 - Jacobian in coordinate transformation
 Upon evaluating an integral, we can change the coordinates of the integral from ${x,y} -> {u,v}$ by parametrize the variables: $ x = x(u,v) quad y= y(u,v) $  
@@ -122,7 +132,10 @@ $
 
   == Gradient
 - Nabla operation: $ 
-    nabla = (partial)/(partial x)  + (partial)/(partial y)  + (partial)/(partial z) $
+#rect(inset: 8pt)[
+$ display(    nabla = (partial)/(partial x)  + (partial)/(partial y)  + (partial)/(partial z))$
+]
+ $
 
 - Gradient in cartesian Scalar field $f = f(x,y,z)$  $ 
     nabla f = ( (diff f)/(diff x) , (diff f)/(diff y) , (diff f)/(diff z) ) 
@@ -163,16 +176,19 @@ $
   == Green's theorem
 
 $ 
-    integral_(C) P d x + Q d y = integral.double_(D) (partial Q)/(partial x) - (partial P)/(partial y) d A=integral.double_(C) arrow(F) dot dif arrow(r)
+#rect(inset: 8pt)[
+$ display(    integral_(C) P d x + Q d y = integral.double_(D) (partial Q)/(partial x) - (partial P)/(partial y) d A=integral.double_(C) arrow(F) dot dif arrow(r) )$
+]
+
 $ 
 
 
-  == Surface Integral 
+  == Flux
  - for a surface, $ arrow(r)(u,v) = (x(u,v), y(u,v), z(u,v))\ => integral.double_(S) arrow(F) dot  dif arrow(S) = integral.double_(S) arrow(F) dot arrow(n)  dif S = integral.double_(D) arrow(F)(arrow(r)(u,v)) dot (arrow(r_u) times arrow(r_v))  dif A 
   
   $ 
   
-- if the surface is a graph of a fucntion $z=g(x,y), (x,y) in D, arrow(F) = (P,Q,R)$,
+- if the surface is a graph of a fucntion $z=g(x,y) $ where $  (x,y) in D, arrow(F) = (P,Q,R)$,
   then $ 
       integral_(S) arrow(F) dot dif arrow(s) = integral.double_(D) (P,Q,R) dot (-partial_x g, -partial_y g, 1)  dif A   
   $ 
@@ -180,9 +196,22 @@ $
  == Stokes' theorem
 
 
-  Let $F: R^3 -> R^3$ be a vector field on $R^3$ , then $ 
-      integral_(C) arrow(F) dot dif arrow(r) = integral.double_(S) "curl"(arrow(F)) dif arrow(s),\ "where" "curl"(arrow(F)) = nabla times arrow(F)  
+  Let $F: R^3 -> R^3$ be a vector field on $R^3$ with any normal vector $arrow(n)$ , and for a surface $S$ with projection on ${u,v}$ being $A$,   then $ 
+#rect(inset: 8pt)[
+$ display(      integral_(C) arrow(F) dot dif arrow(r) = integral.double_(S) "curl"(arrow(F)) dot hat(n)dif S = integral.double_(S) ( nabla times arrow(F)) dot arrow(n) dif A)$
+]
+
+      ,\ "where" "curl"(arrow(F)) = nabla times arrow(F) 
   $ 
+
+- Discussion on stokes theorem
+
+  for a surface surface parametrized by $arrow(r)_(u), arrow(r)_(v)$, we have $ 
+      dif arrow(S) = hat(n) dif A = arrow(n) dif u dif v 
+  $ 
+Therefore, when using stokes theorem, we cna either turn it into a surface integral with respect to actual surface S, with 
+
+
 
 
 #line(length: 100%)
@@ -231,9 +260,43 @@ If $f$ and $g$ are holomorphic on $Omega$, then
 
 === Cauchy-Riemann equations
 for complex function $f: Omega -> bb(C) , f(z) = u(x,y)+i v(x,y)$ that is holomorphic at $z_0 = x_0 + i y_0$, then the partial derivatives of $u$ and $v$ exist and satisfy the Cauchy-Riemann equations: $ 
-    partial_x u = partial_y v, quad partial_y u = -partial_x v $ 
+#rect(inset: 8pt)[
+$ display(    partial_x u = partial_y v quad partial_y u = -partial_x )$
+]
+ $ 
 
 Conversly, if $u$ and $v$ are continuously differentiable on an open set $Omega$ and satisfy the Cauchy-Riemann equations, then $f(z) = u(x,y) + i v(x,y)$ is holomorphic on $Omega$.
 
 In the language of logic, let C be "satisfying cauchy-riemann equations", and H be "function is holomorphic", then $H -> C$. If D is "u and v have continuous partial derivatives with respect to x and y", then $(C "&" D) <-> H$ 
 
+== Cauchy's integral theorem (closed loop)
+
+For a closed curve $C$ in an open set $Omega$ and a holomorphic function $f: Omega -> bb(C)$, then $ 
+    integral.cont_(C) f(z) dif z = 0
+$ 
+  
+== Fundemental theorem of calculus for complex analysis
+If $f$ is holomorphic on an open set $Omega$ and $a,b in Omega$, and for $f(z) = F'(z)$ , we have $ 
+#rect(inset: 8pt)[
+$ display(    integral.cont_(C) f(z) dif z = F(b) - F(a))$
+]
+
+$
+ 
+== Poles and singularities
+
+
+
+
+== Cauchy's integral formula
+This relates the value of a holomorphic function at a point to the value of its derivatives on a curve.
+$ 
+#rect(inset: 8pt)[
+$ display(    f^(n) (z_0) = (n!)/(2 pi i) integral_(C) (f(z))/((z - z_0)^(n + 1) ) dif z  )$
+]
+
+$ 
+Often times, we are concernnd in finding the value of a function of the form $ integral_(C) (f(z))/((z-z_0)^(n+1) ) dif z , $ so we would like to take the nth derivative of the function $f(z)$ at $z_0$, and find the desired integral by $ 
+    (2 pi i)/(n!) f^(n) (z_0) 
+$ 
+ 

@@ -11,22 +11,50 @@
   $ 
   Thus, $(nabla times arrow(F)) dot arrow(n) = 0$. 
    This implies that $ integral.double_(S) (nabla times arrow(F)) dot arrow(n) dif S= 0$ \ 
-  #rect(inset: 8pt)[Thus the result of the given line integral is 0]
+  #rect(inset: 8pt)[Thus the result of the given line integral is 0] 
 
-+ Choose A as the triangle with vertices $(1,0,0),(0,1,0),(0,0,1)$ as suggested, and A follows the equation $x+y+z=1$. Normal vector to S is $arrow(n) = (1 ,1,1)$
+
++ Recall stokes' theorem, $ 
+    integral_(C)  arrow(F) dot  dif arrow(r) = integral.double_(S)  "curl"(arrow(F)) dot arrow(n) dif A = integral.double_(S) "curl" (arrow(F)) dot hat(n) dif S 
+  $ for $A$ s.t. $dif arrow(S) = norm(arrow(r)_(u) times arrow(r)_(v)) dif A$   , $A$ being the projection of $S$ onto the ${u,v}$ plane.
+ 
+  Choose S as the triangle with vertices $(1,0,0),(0,1,0),(0,0,1)$ as suggested, and S follows the equation $x+y+z=1$.
+  
+   Normal vector to S is $arrow(n)= arrow(r)_(x) times arrow(r)_(y) = (1,1,1) $  Unit normal vector to S is $hat(n)  = (1/sqrt(3)  , 1/sqrt(3) , 1/sqrt(3) )$
      $ 
     nabla times arrow(F) = det display(mat(i,j,k; (diff )/(diff x) ,(diff )/(diff y) ,(diff )/(diff z); x+y^2,y+z^2,z+x^2)) = display(mat(-2z;-2x;-2y)) 
      $ 
-      Thus, $(nabla times arrow(F)) dot arrow(n) = -2/sqrt(3)(x+y+z)$.
+      Thus, $(nabla times arrow(F)) dot arrow(n) = -2(x+y+z)$.
+
       $ 
-           integral.double_(S) (nabla times arrow(F)) dot arrow(n) dif S 
+           integral.double_(S) (nabla times arrow(F)) dot arrow(n) dif A 
            &= -2integral.double_(S) x+y+z dif A \ 
            & = -2integral.double_(S) x+y+1-x-y dif A \ 
            & = -2integral.double_(S) 1 dif A \ 
            & = -2 times "Area: projection of 3d triangle on the xy plane" \ 
            & = -2 times 1/2 \ 
            & = -1
-      $ 
+      $
+Alternatively, we can find this without doing the projection of S onto the $x,y$ plane: 
+
+$(nabla times arrow(F)) dot hat(n) = -2/(sqrt(3))  (x+y+z)$ 
+
+$ 
+     integral.double_(S) "curl"(arrow(F)) dot hat(n) dif S &= integral.double_(S)  -2/(sqrt(3))  (x+y+z) dif S \ 
+    & = -2/(sqrt(3))  integral.double_(S) (x+y + 1 -x -y) dif S \ 
+    & = -2/(sqrt(3))  integral.double_(S) 1 dif S \ 
+    & = -2/(sqrt(3))  * "Area: 3d triangle" \ 
+    & = -2/(sqrt(3))  dot (1/2 * norm( (1,0,-1) times (-1,1,0)) ) \ 
+    & = -1
+
+$ 
+ 
+
+
+
+ 
+
+
 
 + #rect($ 
     "Re"(z) = sqrt(2); quad "Im" = -pi
@@ -95,6 +123,6 @@ $ display(  -5 +i(-1))$
 #rect(inset: 8pt)[
 $ display(    => (z w)^*=z^* w^*)$
 ]
- \
-$ 
+ $
+ 
  
