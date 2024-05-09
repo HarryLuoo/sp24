@@ -1,3 +1,5 @@
+#set page("us-letter")
+
 #set heading(numbering: "I.1")
 #set page(margin: (x: 3cm, y: 1cm))
 #set text(12pt)
