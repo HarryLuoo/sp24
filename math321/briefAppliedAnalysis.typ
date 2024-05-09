@@ -6,9 +6,12 @@
 Notes on MATH 321]
 Harry Luo
 
-The course contents could be better had it been Fabien's class, but probably Trighn saved my GPA. 
+The course contents could be better had it been Fabien's class, but probably Trinh saved my GPA. 
 #line(length:100%, stroke:(thickness: 2pt))
 #outline(indent: auto,)
+#pagebreak()
+
+
 = Vector algebra
 == Coordinate Transformation
 === cylindical
@@ -174,7 +177,7 @@ $
 
 
   == Green's theorem
-
+For $P(x,y), Q(x,y)$, and a simple closed curve C,  
 $ 
 #rect(inset: 8pt)[
 $ display(    integral_(C) P d x + Q d y = integral.double_(D) (partial Q)/(partial x) - (partial P)/(partial y) d A=integral.double_(C) arrow(F) dot dif arrow(r) )$
@@ -300,3 +303,29 @@ Often times, we are concernnd in finding the value of a function of the form $ i
     (2 pi i)/(n!) f^(n) (z_0) 
 $ 
  
+== Cauchy's residue theorem
+=== Poles
+Simply find where the fraction is not defined, i.e. where the denominator is 0. This is normally done by first using $(a^2 + z^2) = ( z + a i) (z - a i)$ to factor the denominator, and set it to 0.
+
+=== Residue
+If the factored denominator has the form $(z + a i) (z + b i)$, then it has two poles of order 1. If it has the form $(z + a i)^2 (z + b i )^2$, then it has 2 poles of order 2.
+
+If has poles of order one, for each pole $z_0$ , find residue by $ 
+     "Res"(f,z_0) = lim_(z  -> z_0) (z - z_0) f(z)
+$ 
+
+If has pole of order n, for each pole $z_0$, find res by$ 
+     "Res"(f,z_0) = lim_(z -> z_0) (1)/((n-1)!) (d/(d z))^(n-1) ((z-z_0)^n f(z))
+
+$ 
+
+
+=== Cauchy's residue theorem
+For a simple closed curve $C$ in an open set $Omega$ and a holomorphic function $f: Omega -> bb(C)$, then $
+    integral.cont_(C) f(z) dif z = 2 pi i sum_(k=1)^(n) "Res"(f,z_k)
+$ 
+where $z_k$ are the poles of $f$ in $C$.
+
+Often times, we want to find the value of the integral $ 
+    integral f(z) dif z
+$
