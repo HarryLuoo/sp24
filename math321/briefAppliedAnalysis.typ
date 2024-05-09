@@ -136,7 +136,7 @@ $
   == Gradient
 - Nabla operation: $ 
 #rect(inset: 8pt)[
-$ display(    nabla = (partial)/(partial x)  + (partial)/(partial y)  + (partial)/(partial z))$
+$ display(    nabla = (partial)/(partial x) hat(x) + (partial)/(partial y) hat(y)  + (partial)/(partial z) hat(z)) $
 ]
  $
 
@@ -279,20 +279,20 @@ For a closed curve $C$ in an open set $Omega$ and a holomorphic function $f: Ome
 $ 
   
 == Fundemental theorem of calculus for complex analysis
-If $f$ is holomorphic on an open set $Omega$ and $a,b in Omega$, and for $f(z) = F'(z)$ , we have $ 
+If $f$ is holomorphic on an open set $Omega$ and $a,b in Omega$, and for $f(z) = F'(z)$ , and $a,b$ are the start and end points of curve $C$,    we have $ 
 #rect(inset: 8pt)[
-$ display(    integral.cont_(C) f(z) dif z = F(b) - F(a))$
+$ display(    integral_(C) f(z) dif z = F(b) - F(a))$
 ]
 
 $
  
-== Poles and singularities
+
 
 
 
 
 == Cauchy's integral formula
-This relates the value of a holomorphic function at a point to the value of its derivatives on a curve.
+This relates the value of a contour integration  to the value of its derivatives on a curve.
 $ 
 #rect(inset: 8pt)[
 $ display(    f^(n) (z_0) = (n!)/(2 pi i) integral_(C) (f(z))/((z - z_0)^(n + 1) ) dif z  )$
@@ -305,13 +305,13 @@ $
  
 == Cauchy's residue theorem
 === Poles
-Simply find where the fraction is not defined, i.e. where the denominator is 0. This is normally done by first using $(a^2 + z^2) = ( z + a i) (z - a i)$ to factor the denominator, and set it to 0.
+Simply find where the fraction is not defined, i.e. where the denominator is 0. This is normally done by first using $(a^2 + z^2) = ( z + a i) (z - a i)$ to factor the denominator, and then setting the denominator to 0 to find poles $z_i $ .
 
 === Residue
 If the factored denominator has the form $(z + a i) (z + b i)$, then it has two poles of order 1. If it has the form $(z + a i)^2 (z + b i )^2$, then it has 2 poles of order 2.
 
-If has poles of order one, for each pole $z_0$ , find residue by $ 
-     "Res"(f,z_0) = lim_(z  -> z_0) (z - z_0) f(z)
+If has poles of order one, for each pole $z_i$ , find residue by $ 
+     "Res"(f,z_i) = lim_(z  -> z_i) (z - z_i) f(z)
 $ 
 
 If has pole of order n, for each pole $z_0$, find res by$ 
@@ -327,5 +327,20 @@ $
 where $z_k$ are the poles of $f$ in $C$.
 
 Often times, we want to find the value of the integral $ 
-    integral f(z) dif z
-$
+    integral_0^infinity f(x) dif x  
+$ to which we are clueless to solve in the real domain. Cauchy suggests that we can take a detour via the complex domain by using the subsitution $f(z) = f(x)$ where $z in bb(C)$. By residue theorem we have $ 
+    integral.cont_(C) f(z)  dif z = integral_(-R)^(R) f(z)  dif z + integral_(gamma) f(z)  dif z = 2 pi i sum_(k=1)^(n) "Res"(f,z_k)   
+$ Normally, this looks like 
+#image("assets/2024-04-30-23-11-37.png", width: 50%)
+where $gamma$ is the semicircle in the complex domain
+
+We thus get $ 
+    integral_(-R)^(R) f(z)  dif z = 2 pi i sum_(k=1)^(n) "Res"(f,z_k) - underbrace(integral_(gamma) f(z)  dif z , *) 
+$ 
+we notice that $(*) <= "max"_(|z| = R)[ f(z) ] * "length of" gamma = f(R) * pi R =^(R-> 0) 0$. 
+
+In english this means $(*)$ is smaller than the product of maximal value of $f(z)$ on the semicircle and the length of the semicircle, which goes to 0 as $R$ goes to infinity.  
+
+Thus the above integral becomes$ 
+    integral_(-R)^(R) f(z)  dif z = 2 pi i sum_(k=1)^(n) "Res"(f,z_k) 
+$ 
