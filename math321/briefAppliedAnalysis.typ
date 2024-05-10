@@ -189,7 +189,7 @@ $
 
 
   == Flux
- - for a surface, $ arrow(r)(u,v) = (x(u,v), y(u,v), z(u,v))\ => integral.double_(S) arrow(F) dot  dif arrow(S) = integral.double_(S) arrow(F) dot arrow(n)  dif S = integral.double_(D) arrow(F)(arrow(r)(u,v)) dot (arrow(r_u) times arrow(r_v))  dif A 
+ - for a surface, $ arrow(r)(u,v) = (x(u,v), y(u,v), z(u,v))\ => integral.double_(S) arrow(F) dot  dif arrow(S) = integral.double_(S) arrow(F) dot hat(n)  dif S = integral.double_(D) arrow(F)(arrow(r)(u,v)) dot (arrow(r_u) times arrow(r_v))  dif A 
   
   $ 
   
@@ -212,7 +212,7 @@ $ display(      integral_(C) arrow(F) dot dif arrow(r) = integral.double_(S) "cu
 - Discussion on stokes theorem
 
   for a surface surface parametrized by $arrow(r)_(u), arrow(r)_(v)$, we have $ 
-      dif arrow(S) = hat(n) dif A = arrow(n) dif u dif v 
+      dif arrow(S) = hat(n) dif S =arrow(n) dif A = arrow(n) dif u dif v 
   $ 
 Therefore, when using stokes theorem, we cna either turn it into a surface integral with respect to actual surface S, with 
 
