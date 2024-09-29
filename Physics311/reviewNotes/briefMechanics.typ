@@ -13,8 +13,8 @@ Harry Luo\
 finalized on 5/7/2024
 It's been a wild ride...
 #line(length: 100%, stroke: (thickness: 2pt))
-#outline()
-
+#outline(indent: auto)
+#line(length: 100%)
 
 //Exam notecard layout:
 // #show heading: text.with(size: 6pt, weight: 990, font: "Libre Baskerville")
